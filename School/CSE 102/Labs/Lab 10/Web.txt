@@ -1,0 +1,3 @@
+Extracting Color Components 
+
+http://www.mathworks.com/matlabcentral/answers/90908-r-g-b-components-of-an-image

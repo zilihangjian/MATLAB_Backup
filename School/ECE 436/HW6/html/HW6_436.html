@@ -1,0 +1,333 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HW6_436</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-11"><meta name="DC.source" content="HW6_436.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">clc; clear; close <span class="string">all</span>;
+<span class="comment">%Problem 20</span>
+<span class="comment">%Part a</span>
+<span class="comment">%Rise Time Calculation Approximation for Second Order System</span>
+
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Problem 20\n'</span>);
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Part a\n'</span>);
+wn = 4;
+dR = 3/8;
+
+const1 = sqrt(1-dR^2);
+Tp = pi/(wn*const1);
+fprintf(<span class="string">'Peak Time | %g seconds\n'</span>,Tp);
+
+OS = exp(-(dR*pi/const1))*100;
+fprintf(<span class="string">'Overshoot | %g Percent\n'</span>,OS);
+
+Ts = 4/(dR*wn);
+fprintf(<span class="string">'Settling Time | %g seconds\n'</span>,Ts);
+
+phi = atan(dR/const1);
+timeSR = @(t)(1 - (exp(-(dR*wn*t))*(cos(wn*const1*t) + <span class="keyword">...</span>
+                        (dR/const1)*sin(wn*const1*t))));
+
+Tr = (timeSR(0.90) - timeSR(0.10))/wn;
+fprintf(<span class="string">'Rise Time | %g seconds\n'</span>,Tr);
+
+<span class="comment">%Problem 23</span>
+<span class="comment">%Part b</span>
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Problem 23\n'</span>);
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Part b\n'</span>);
+t = linspace(0,30,10000);
+OS_23B = 1/10;
+Tp_23B = 5;
+zeta23b = (-log(OS_23B) / sqrt((pi^2) + log(OS_23B)^2));
+wn23B = (pi/(Tp_23B*sqrt(1-zeta23b^2)));
+sys = tf([(wn23B^2)],[1,(2*zeta23b*wn23B), wn23B^2]);
+sys <span class="comment">%#ok&lt;NOPTS&gt;</span>
+inputResponse = heaviside(t);<span class="comment">%u(t)</span>
+figure()
+lsim(sys,inputResponse,t);
+
+[z1,p1] = zpkdata(sys);
+z1 = cell2mat(z1);
+p1 = cell2mat(p1);
+fprintf(<span class="string">'Zeros | %g\n'</span>,z1);
+fprintf(<span class="string">'Poles | %g\n'</span>,p1);
+figure()
+pzmap(sys);
+title(<span class="string">'System Poles and Zeros'</span>)
+
+<span class="comment">%Problem 32</span>
+<span class="comment">%Part a</span>
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Problem 32\n'</span>);
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Part a\n'</span>);
+tA = linspace(0,0.25,10000);
+sysA = tf([(200/3)],[1,(100/3)]);
+fprintf(<span class="string">'Transfer Function Model\n'</span>);
+sysA <span class="comment">%#ok&lt;NOPTS&gt;</span>
+inputResponseA = heaviside(tA);<span class="comment">%u(t)</span>
+figure()
+lsim(sysA,inputResponseA,tA);
+
+<span class="comment">%Part b</span>
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Part b\n'</span>);
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+tB = linspace(0,5,10000);
+OS_B = 2/11;
+Tp_B = 1;
+zetab = (-log(OS_B) / sqrt((pi^2) + log(OS_B)^2));
+wnB = (pi/(Tp_B*sqrt(1-zetab^2)));
+sysB = tf([(wnB^2)],[1,(2*zetab*wnB), wnB^2]);
+sysB <span class="comment">%#ok&lt;NOPTS&gt;</span>
+inputResponseB = 11*heaviside(tB);<span class="comment">%u(t)</span>
+figure()
+lsim(sysB,inputResponseB,tB);
+
+<span class="comment">%Part c</span>
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+fprintf(<span class="string">'Part c\n'</span>);
+fprintf(<span class="string">'------------------------------------------------------------------\n'</span>);
+tC = linspace(0,25,10000);
+OS_C = 2/5;
+Tp_C = 4;
+zetac = (-log(OS_C) / sqrt((pi^2) + log(OS_C)^2));
+wnC = (pi/(Tp_C*sqrt(1-zetac^2)));
+sysC = tf([(wnC^2)],[1,(2*zetac*wnC), wnC^2]);
+sysC <span class="comment">%#ok&lt;NOPTS&gt;</span>
+inputResponseC = heaviside(tC);<span class="comment">%u(t)</span>
+figure()
+lsim(sysC,inputResponseC,tC);
+</pre><pre class="codeoutput">------------------------------------------------------------------
+Problem 20
+------------------------------------------------------------------
+Part a
+Peak Time | 0.847225 seconds
+Overshoot | 28.0597 Percent
+Settling Time | 2.66667 seconds
+Rise Time | 0.300765 seconds
+------------------------------------------------------------------
+Problem 23
+------------------------------------------------------------------
+Part b
+
+sys =
+ 
+          0.6069
+  ----------------------
+  s^2 + 0.921 s + 0.6069
+ 
+Continuous-time transfer function.
+
+Zeros | 
+Poles | -0.460517
+Poles | -0.460517
+------------------------------------------------------------------
+Problem 32
+------------------------------------------------------------------
+Part a
+Transfer Function Model
+
+sysA =
+ 
+    66.67
+  ---------
+  s + 33.33
+ 
+Continuous-time transfer function.
+
+------------------------------------------------------------------
+Part b
+------------------------------------------------------------------
+
+sysB =
+ 
+          12.78
+  ---------------------
+  s^2 + 3.409 s + 12.78
+ 
+Continuous-time transfer function.
+
+------------------------------------------------------------------
+Part c
+------------------------------------------------------------------
+
+sysC =
+ 
+          0.6693
+  -----------------------
+  s^2 + 0.4581 s + 0.6693
+ 
+Continuous-time transfer function.
+
+</pre><img vspace="5" hspace="5" src="HW6_436_01.png" alt=""> <img vspace="5" hspace="5" src="HW6_436_02.png" alt=""> <img vspace="5" hspace="5" src="HW6_436_03.png" alt=""> <img vspace="5" hspace="5" src="HW6_436_04.png" alt=""> <img vspace="5" hspace="5" src="HW6_436_05.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc; clear; close all;
+%Problem 20 
+%Part a
+%Rise Time Calculation Approximation for Second Order System
+
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Problem 20\n');
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Part a\n');
+wn = 4;
+dR = 3/8;
+
+const1 = sqrt(1-dR^2);
+Tp = pi/(wn*const1);
+fprintf('Peak Time | %g seconds\n',Tp);
+
+OS = exp(-(dR*pi/const1))*100;
+fprintf('Overshoot | %g Percent\n',OS);
+
+Ts = 4/(dR*wn);
+fprintf('Settling Time | %g seconds\n',Ts);
+
+phi = atan(dR/const1);
+timeSR = @(t)(1 - (exp(-(dR*wn*t))*(cos(wn*const1*t) + ...
+                        (dR/const1)*sin(wn*const1*t))));
+
+Tr = (timeSR(0.90) - timeSR(0.10))/wn;
+fprintf('Rise Time | %g seconds\n',Tr);
+
+%Problem 23 
+%Part b
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Problem 23\n');
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Part b\n');
+t = linspace(0,30,10000);
+OS_23B = 1/10;
+Tp_23B = 5;
+zeta23b = (-log(OS_23B) / sqrt((pi^2) + log(OS_23B)^2));
+wn23B = (pi/(Tp_23B*sqrt(1-zeta23b^2)));
+sys = tf([(wn23B^2)],[1,(2*zeta23b*wn23B), wn23B^2]);
+sys %#ok<NOPTS>
+inputResponse = heaviside(t);%u(t)
+figure()
+lsim(sys,inputResponse,t);
+
+[z1,p1] = zpkdata(sys);
+z1 = cell2mat(z1);
+p1 = cell2mat(p1);
+fprintf('Zeros | %g\n',z1);
+fprintf('Poles | %g\n',p1);
+figure()
+pzmap(sys);
+title('System Poles and Zeros')
+
+%Problem 32
+%Part a
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Problem 32\n');
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Part a\n');
+tA = linspace(0,0.25,10000);
+sysA = tf([(200/3)],[1,(100/3)]);
+fprintf('Transfer Function Model\n');
+sysA %#ok<NOPTS>
+inputResponseA = heaviside(tA);%u(t)
+figure()
+lsim(sysA,inputResponseA,tA);
+
+%Part b
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Part b\n');
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+tB = linspace(0,5,10000);
+OS_B = 2/11;
+Tp_B = 1;
+zetab = (-log(OS_B) / sqrt((pi^2) + log(OS_B)^2));
+wnB = (pi/(Tp_B*sqrt(1-zetab^2)));
+sysB = tf([(wnB^2)],[1,(2*zetab*wnB), wnB^2]);
+sysB %#ok<NOPTS>
+inputResponseB = 11*heaviside(tB);%u(t)
+figure()
+lsim(sysB,inputResponseB,tB);
+
+%Part c
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+fprintf('Part c\n');
+fprintf('REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH\n');
+tC = linspace(0,25,10000);
+OS_C = 2/5;
+Tp_C = 4;
+zetac = (-log(OS_C) / sqrt((pi^2) + log(OS_C)^2));
+wnC = (pi/(Tp_C*sqrt(1-zetac^2)));
+sysC = tf([(wnC^2)],[1,(2*zetac*wnC), wnC^2]);
+sysC %#ok<NOPTS>
+inputResponseC = heaviside(tC);%u(t)
+figure()
+lsim(sysC,inputResponseC,tC);
+
+
+
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,33 @@
+%test 2
+
+clear all;
+close all;
+t = -2*pi:pi/10:2*pi;
+x = abs(sin(t));
+
+subplot(2,2,1);
+plot(t,x,'r');
+xlabel('X');
+ylabel('Time');
+grid;
+
+subplot(2,2,2);
+area(t,x);
+xlabel('X');
+ylabel('Time');
+grid;
+
+subplot(2,2,3);
+stem(t,x,'rx');
+xlabel('X');
+ylabel('Time');
+grid;
+
+subplot(2,2,4);
+new_t = -2*pi:pi/100:2*pi;
+new_x = abs(cos(new_t));
+stem(new_t,new_x,'bo');
+xlabel('X');
+ylabel('Time');
+grid;
+

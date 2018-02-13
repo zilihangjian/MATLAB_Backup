@@ -1,0 +1,12 @@
+clc; close all; clear;
+rice = imread('rice.jpg');
+rice = rgb2gray(rice);
+rice = imresize(rice,(256/850)); 
+figure(1); imshow(rice); title('Rice');
+camera = imread('cameraman.png');
+figure(2); imshow(camera); title('Camera Man');
+superIm = imlincomb(.5,camera,.5,rice);
+figure(3); imshow(superIm);title('Superposition');
+level = graythresh(superIm);
+superThresh = im2bw(superIm,1-level);
+figure(4); imshow(superThresh); title('Superposition Threshold');

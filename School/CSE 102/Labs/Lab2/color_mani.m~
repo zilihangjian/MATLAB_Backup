@@ -1,0 +1,15 @@
+pic = imread('Purple Mountain Magesties.jpg');
+disp(pic);
+figure(2)
+for i=1:366
+    for j=1:500
+        if pic(i,j) < 250 
+            pic(i,j) = 100;
+        end
+    end
+end
+
+figure(1);
+imshow(pic);
+
+

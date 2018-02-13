@@ -1,0 +1,37 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    \begin{verbatim}
+%Buck Boost Converter
+%Voltage Ripple vs Duty Cycle
+dutyCycle = linspace(0,1,1000);
+Vout = 15;
+fs = 50e3;
+Rload = 10;
+C = 100e-6;
+Vripple = Vout.*dutyCycle ./ (fs*Rload*C);
+figure()
+plot(dutyCycle, Vripple,'r')
+title('Duty Cycle vs Voltage Ripple');
+xlabel('Duty Cycle');
+ylabel('Voltage Ripple');
+\end{verbatim}
+
+\includegraphics [width=4in]{question7Graph_01.eps}
+
+
+
+\end{document}
+    

@@ -1,0 +1,1011 @@
+>> x = [-5:0.1:5];
+>> plot(x,3.*x^2 - 5.*x^2 + x - 2,'.');
+Error using  ^ 
+Inputs must be a scalar and a square matrix.
+To compute elementwise POWER, use POWER (.^) instead.
+ 
+>> plot(x,3.*x.^2 - 5.*x.^2 + x - 2,'.');
+>> xlim([-2,2])
+>> plot(x,3.*x.^2 - 5.*x.^2 + x + 2,'.');
+>> xlim([-2,2])
+>> plot(x,polyval([3 -5 1 2],x), '--k')
+>> diary('Week5')edit('Roots')
+edit('RootFinding')
+RootFinding
+RootFinding
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\RootFinding.m',9,65)">File: RootFinding.m Line: 9 Column: 65
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+RootFinding
+Root: 0.000000RootFinding
+if system_dependent('IsDebugMode')==1, dbstep; end
+clear
+newtonRaphson(0,100,.001)
+{Undefined function or variable 'xstart'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 8)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',8,0)">line 8</a>)
+error = fx(xstart);
+} 
+clc
+clear
+close all
+newtonRaphson(0,100,.001)
+{Undefined function or variable 'newtonRaphson'.
+} 
+newtonRaphson(0,100,.001)
+{Undefined function or variable 'x'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 11)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,0)">line 11</a>)
+    dfx = (((fx(count) + fx(count+1)) ./ (x(count) + x(count+1))));
+} 
+help diff
+ <strong>diff</strong> Difference and approximate derivative.
+    <strong>diff</strong>(X), for a vector X, is [X(2)-X(1)  X(3)-X(2) ... X(n)-X(n-1)].
+    <strong>diff</strong>(X), for a matrix X, is the matrix of row differences,
+       [X(2:n,:) - X(1:n-1,:)].
+    <strong>diff</strong>(X), for an N-D array X, is the difference along the first
+       non-singleton dimension of X.
+    <strong>diff</strong>(X,N) is the N-th order difference along the first non-singleton 
+       dimension (denote it by DIM). If N >= size(X,DIM), <strong>diff</strong> takes 
+       successive differences along the next non-singleton dimension.
+    <strong>diff</strong>(X,N,DIM) is the Nth difference function along dimension DIM. 
+       If N >= size(X,DIM), <strong>diff</strong> returns an empty array.
+ 
+    Examples:
+       h = .001; x = 0:h:pi;
+       diff(sin(x.^2))/h is an approximation to 2*cos(x.^2).*x
+       diff((1:10).^2) is 3:2:19
+ 
+       If X = [3 7 5
+               0 9 2]
+       then diff(X,1,1) is [-3 2 -3], diff(X,1,2) is [4 -2
+                                                      9 -7],
+       diff(X,2,2) is the 2nd order difference along the dimension 2, and
+       diff(X,3,2) is the empty matrix.
+ 
+    See also <a href="matlab:help gradient">gradient</a>, <a href="matlab:help sum">sum</a>, <a href="matlab:help prod">prod</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('diff')">Other functions named diff</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc diff">doc diff</a>
+
+clc
+newtonRaphson(0,100,.001)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('diff')" style="font-weight:bold">diff</a>
+Function 'diff' is not supported for class 'function_handle'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson>@(x)diff(fx)', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 7)" style="font-weight:bold">newtonRaphson>@(x)diff(fx)</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',7,0)">line 7</a>)
+dfx = @(x) diff(fx);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 12)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,0)">line 12</a>)
+    func_root= (xprev + fx(xprev)/dfx(xprev));
+} 
+newtonRaphson(0,100,.001)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mrdivide')" style="font-weight:bold"> / </a>
+Matrix dimensions must agree.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 12)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,0)">line 12</a>)
+    func_root= (xprev + fx(xprev)/dfx(xprev));
+} 
+newtonRaphson(0,100,.001)
+{Operands to the || and && operators must be convertible to logical scalar values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 16)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,0)">line 16</a>)
+end
+} 
+clc
+newtonRaphson(0,100,.001)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)./dfx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+{Operands to the || and && operators must be convertible to logical scalar values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 11)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,0)">line 11</a>)
+while tolerance < error && count <= steps
+} 
+dbstep
+{Undefined function or variable 'count'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RootFinding', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\RootFinding.m', 13)" style="font-weight:bold">RootFinding</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\RootFinding.m',13,0)">line 13</a>)
+if count > limit
+} 
+newtonRaphson(0,100,.001)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)./dfx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+{Operands to the || and && operators must be convertible to logical scalar values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 11)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,0)">line 11</a>)
+while tolerance < error && count <= steps
+} 
+newtonRaphson(0,100,.001)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)./dfx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+{Operands to the || and && operators must be convertible to logical scalar values.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 11)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,0)">line 11</a>)
+while tolerance < error && count <= steps
+} 
+newtonRaphson(0,100,.001)
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,56)">File: newtonRaphson.m Line: 12 Column: 56
+</a>Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+newtonRaphson(0,100,.001)
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,55)">File: newtonRaphson.m Line: 12 Column: 55
+</a>Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+newtonRaphson(0,100,.001)
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,63)">File: newtonRaphson.m Line: 12 Column: 63
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+newtonRaphson(0,100,.001)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',12,1)">12  </a>    func_root= (xprev + fx(xprev)/ (polyval([9 -10 1],xprev)));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',13,1)">13  </a>    xprev = func_root;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',14,1)">14  </a>    error = abs(fx(xprev));
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',15,1)">15  </a>    count = count + 1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',16,1)">16  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',11,1)">11  </a>while tolerance < error && count <= steps
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',18,1)">18  </a>if count > limit
+{Undefined function or variable 'limit'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 18)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',18,0)">line 18</a>)
+if count > limit
+} 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dbstep')" style="font-weight:bold">dbstep</a>
+Debug commands only allowed when stopped in debug mode.
+} 
+newtonRaphson(0,100,.001)
+Error in Starting Step
+ans =
+
+   3.2535e+12
+
+newtonRaphson(0,100,.001)
+Error in Starting Step{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fplot', 'C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m', 51)" style="font-weight:bold">fplot</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m',51,0)">line 51</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 19)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',19,0)">line 19</a>)
+    fplot(fx)
+} 
+newtonRaphson(0,100,.001)
+Error in Starting Step{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnchk', 'C:\Program Files\MATLAB\R2015a\toolbox\matlab\funfun\fcnchk.m', 106)" style="font-weight:bold">fcnchk</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\matlab\funfun\fcnchk.m',106,0)">line 106</a>)
+FUN must be a function, a valid string expression, or an inline function object.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fplot', 'C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m', 60)" style="font-weight:bold">fplot</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m',60,0)">line 60</a>)
+   fun = fcnchk(fun);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 20)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',20,0)">line 20</a>)
+    fplot(x,fx,'--k');
+} 
+help fplot
+ <strong>fplot</strong>   Plot function
+    <strong>fplot</strong>(FUN,LIMS) plots the function FUN between the x-axis limits
+    specified by LIMS = [XMIN XMAX]. Using LIMS = [XMIN XMAX YMIN YMAX]
+    also controls the y-axis limits. FUN(x) must return a row vector for
+    each element of vector x. For example, if FUN returns
+    [f1(x),f2(x),f3(x)] then for input [x1;x2] FUN should return
+ 
+       [f1(x1) f2(x1) f3(x1);
+        f1(x2) f2(x2) f3(x2)]
+ 
+    <strong>fplot</strong>(FUN,LIMS,TOL) with TOL < 1 specifies the relative error
+    tolerance. The default TOL is 2e-3, i.e. 0.2 percent accuracy.
+ 
+    <strong>fplot</strong>(FUN,LIMS,N) with N >= 1 plots the function with a minimum of N+1
+    points. The default N is 1. The maximum step size is restricted to be
+    (1/N)*(XMAX-XMIN).
+ 
+    <strong>fplot</strong>(FUN,LIMS,'LineSpec') plots with the given line specification.
+ 
+    <strong>fplot</strong>(FUN,LIMS,...) accepts combinations of the optional arguments
+    TOL, N, and 'LineSpec', in any order.
+    
+    [X,Y] = <strong>fplot</strong>(FUN,LIMS,...) returns X and Y such that Y = FUN(X). No
+    plot is drawn on the screen.
+ 
+    <strong>fplot</strong>(AX,...) plots into AX instead of GCA.
+ 
+    Examples:
+        fplot(@humps,[0 1])
+        fplot(@(x)[tan(x),sin(x),cos(x)], 2*pi*[-1 1 -1 1])
+        fplot(@(x) sin(1./x), [0.01 0.1], 1e-3)
+        f = @(x,n)abs(exp(-1j*x*(0:n-1))*ones(n,1));
+        fplot(@(x)f(x,10),[0 2*pi])
+ 
+    See also <a href="matlab:help plot">plot</a>, <a href="matlab:help ezplot">ezplot</a>, <a href="matlab:help function_handle">function_handle</a>.
+
+    Reference page in Help browser
+       <a href="matlab:doc fplot">doc fplot</a>
+
+help fplot
+ <strong>fplot</strong>   Plot function
+    <strong>fplot</strong>(FUN,LIMS) plots the function FUN between the x-axis limits
+    specified by LIMS = [XMIN XMAX]. Using LIMS = [XMIN XMAX YMIN YMAX]
+    also controls the y-axis limits. FUN(x) must return a row vector for
+    each element of vector x. For example, if FUN returns
+    [f1(x),f2(x),f3(x)] then for input [x1;x2] FUN should return
+ 
+       [f1(x1) f2(x1) f3(x1);
+        f1(x2) f2(x2) f3(x2)]
+ 
+    <strong>fplot</strong>(FUN,LIMS,TOL) with TOL < 1 specifies the relative error
+    tolerance. The default TOL is 2e-3, i.e. 0.2 percent accuracy.
+ 
+    <strong>fplot</strong>(FUN,LIMS,N) with N >= 1 plots the function with a minimum of N+1
+    points. The default N is 1. The maximum step size is restricted to be
+    (1/N)*(XMAX-XMIN).
+ 
+    <strong>fplot</strong>(FUN,LIMS,'LineSpec') plots with the given line specification.
+ 
+    <strong>fplot</strong>(FUN,LIMS,...) accepts combinations of the optional arguments
+    TOL, N, and 'LineSpec', in any order.
+    
+    [X,Y] = <strong>fplot</strong>(FUN,LIMS,...) returns X and Y such that Y = FUN(X). No
+    plot is drawn on the screen.
+ 
+    <strong>fplot</strong>(AX,...) plots into AX instead of GCA.
+ 
+    Examples:
+        fplot(@humps,[0 1])
+        fplot(@(x)[tan(x),sin(x),cos(x)], 2*pi*[-1 1 -1 1])
+        fplot(@(x) sin(1./x), [0.01 0.1], 1e-3)
+        f = @(x,n)abs(exp(-1j*x*(0:n-1))*ones(n,1));
+        fplot(@(x)f(x,10),[0 2*pi])
+ 
+    See also <a href="matlab:help plot">plot</a>, <a href="matlab:help ezplot">ezplot</a>, <a href="matlab:help function_handle">function_handle</a>.
+
+    Reference page in Help browser
+       <a href="matlab:doc fplot">doc fplot</a>
+
+newtonRaphson(0,100,.001)
+Error in Starting Step{Undefined function or variable 'k'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 20)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',20,0)">line 20</a>)
+    fplot(fx,[-10 10 -10 10]'--k');
+} 
+newtonRaphson(0,100,.001)
+Error in Starting Step
+ans =
+
+   3.2535e+12
+
+newtonRaphson(0,100,.001)
+Error in Starting Step
+ans =
+
+   3.2535e+12
+
+newtonRaphson
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 9)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',9,0)">line 9</a>)
+Not enough input arguments.
+} 
+newtonRaphson
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 9)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',9,0)">line 9</a>)
+Not enough input arguments.
+} 
+newtonRaphson(0,100,.001)
+Error in Starting Step
+ans =
+
+   3.2535e+12
+
+newtonRaphson(0,100,.001)
+Error in Starting Step
+ans =
+
+   3.2535e+12
+
+newtonRaphson(0,100,.001)
+{Undefined function or variable 'root'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 21)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',21,0)">line 21</a>)
+    fprintf('Root: %f',root);
+} 
+newtonRaphson(0,100,.001)
+Root: -0.484598{Undefined function or variable 'x'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 22)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',22,0)">line 22</a>)
+    fplot(x,fx,'--k');
+} 
+newtonRaphson(0,100,.001)
+Root: -0.484598{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.axis.Axes/set')" style="font-weight:bold">matlab.graphics.axis.Axes/set</a>
+While setting the 'XLim' property of <a href="matlab:doc matlab.graphics.axis.Axes">Axes</a>:
+Value must be a 1x2 vector of numeric type in which the second element is larger than the first and may be Inf
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fplot', 'C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m', 153)" style="font-weight:bold">fplot</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\matlab\specgraph\fplot.m',153,0)">line 153</a>)
+  set(cax,'XLim',[xmin xmax]);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 22)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',22,0)">line 22</a>)
+    fplot(fx,'--k');
+} 
+newtonRaphson(0,100,.001)
+Root: -0.484598
+ans =
+
+   -0.4846
+
+newtonRaphson(0,100,.001)
+Root: -0.484598{Undefined operator '*' for input arguments of type 'function_handle'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 24)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',24,0)">line 24</a>)
+    text((func_root),(fx*placement),['(' num2str(func_root) ',' num2str(fx) ')']);
+} 
+newtonRaphson(0,100,.001)
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',24,87)">File: newtonRaphson.m Line: 24 Column: 87
+</a>Unexpected MATLAB expression.
+} 
+newtonRaphson(0,100,.001)
+{Error: <a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',24,88)">File: newtonRaphson.m Line: 24 Column: 88
+</a>Unexpected MATLAB expression.
+} 
+newtonRaphson(0,100,.001)
+Root: -0.484598
+ans =
+
+   -0.4846
+
+newtonRaphson(0,100,.00000\1)
+{Undefined function or variable "func_root".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('newtonRaphson', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m', 21)" style="font-weight:bold">newtonRaphson</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\newtonRaphson.m',21,0)">line 21</a>)
+    fprintf('Root: %f',func_root);
+} 
+newtonRaphson(0,100,.000001)
+Root: -0.484576
+ans =
+
+   -0.4846
+

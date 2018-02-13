@@ -1,0 +1,235 @@
+help nargin
+ <strong>nargin</strong> Number of function input arguments.
+    Inside the body of a user-defined function, <strong>nargin</strong> returns
+    the number of input arguments that were used to call the
+    function. 
+ 
+    <strong>nargin</strong>(FUN) returns the number of declared inputs for the
+    M-file function FUN.  The number of arguments is negative if the
+    function has a variable number of input arguments.  FUN can be 
+    a function handle that maps to a specific function, or a string 
+    containing the name of that function.
+ 
+    See also <a href="matlab:help nargout">nargout</a>, <a href="matlab:help varargin">varargin</a>, <a href="matlab:help narginchk">narginchk</a>, <a href="matlab:help inputname">inputname</a>, <a href="matlab:help mfilename">mfilename</a>.
+
+    Overloaded methods:
+       <a href="matlab:help inline/nargin">inline/nargin</a>
+       <a href="matlab:help fittype/nargin">fittype/nargin</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc nargin">doc nargin</a>
+
+edit macsin
+macsin(pi,10
+ macsin(pi,10
+             |
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+macsin(pi,10)
+{Undefined function 'macsin' for input arguments of type 'double'.
+} 
+macsin(pi,10)
+{Undefined function 'macsin' for input arguments of type 'double'.
+} 
+macsin(3,10
+ macsin(3,10
+            |
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+macsin(3,10)
+{Undefined function 'macsin' for input arguments of type 'double'.
+} 
+macsin(3,10)
+{Error using <a href="matlab:helpUtils.errorDocCallback('factorial', 'C:\Program Files\MATLAB\R2014a\toolbox\matlab\specfun\factorial.m', 20)" style="font-weight:bold">factorial</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\matlab\specfun\factorial.m',20,0)">line 20</a>)
+N must be an array of real non-negative integers.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('macsin', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m', 9)" style="font-weight:bold">macsin</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',9,0)">line 9</a>)
+    sequence = (((-1)^i)*x^(2i-1))/(factorial(2i-1));
+} 
+macsin
+{Error using <a href="matlab:helpUtils.errorDocCallback('macsin', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m', 4)" style="font-weight:bold">macsin</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',4,0)">line 4</a>)
+Need exactly two inputs
+} 
+macsin(4,4
+ macsin(4,4
+           |
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+macsin(4,4)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',7,1)">7   </a>sequence = 0;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+{Error using <a href="matlab:helpUtils.errorDocCallback('factorial', 'C:\Program Files\MATLAB\R2014a\toolbox\matlab\specfun\factorial.m', 20)" style="font-weight:bold">factorial</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\matlab\specfun\factorial.m',20,0)">line 20</a>)
+N must be an array of real non-negative integers.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('macsin', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m', 9)" style="font-weight:bold">macsin</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',9,0)">line 9</a>)
+    sequence = (((-1)^i)*x^(2i-1))/(factorial(2i-1));
+} 
+macsin
+{Error using <a href="matlab:helpUtils.errorDocCallback('macsin', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m', 4)" style="font-weight:bold">macsin</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',4,0)">line 4</a>)
+Need exactly two inputs
+} 
+macsin(pi,4)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\macsin.m',7,1)">7   </a>sequence = 0;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): -0.00008if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+ans =
+
+  -8.3162e-05 + 9.5074e-05i
+
+ function [val] = macsin(x,n)
+ |
+{Error: Function definitions are not permitted in this context.
+} 
+macsin(pi,4)
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): 1.19853
+ans =
+
+    1.1985
+
+macsin(pi,5)
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): -0.16429
+ans =
+
+   -0.1643
+
+macsin(pi,6)
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): 0.01474
+ans =
+
+    0.0147
+
+macsin(pi,7)
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): -0.00093
+ans =
+
+  -9.3261e-04
+
+macsin(pi,8)
+Sin(x): 0.00000 
+ Maclaurin of Sin(x): 0.00004
+ans =
+
+   4.3831e-05
+
+macsin(pi/2,8)
+Sin(x): 1.00000 
+ Maclaurin of Sin(x): 0.00000
+ans =
+
+   1.3376e-09
+
+a = round(10*rand);
+
+v = rand(a,1);
+c = char(67)
+
+c =
+
+C
+
+s = 'Hello'
+
+s =
+
+Hello
+
+sprintf('The value of a is %d, the number of elements in v is %d and v(1) = %f, the char c is %c and the string s is %s',a, length(v),v(1),c,s));
+ sprintf('The value of a is %d, the number of elements in v is %d and v(1) = %f, the char c is %c and the string s is %s',a, length(v),v(1),c,s));
+                                                                                                                                                |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+sprintf('The value of a is %d, the number of elements in v is %d and v(1) = %f, the char c is %c and the string s is %s',a, length(v),v(1),c,s);
+edit(Formatting Strings
+ edit(Formatting Strings
+                 |
+{Error: Unexpected MATLAB expression.
+} 
+v = rand(round(10*rand))
+
+v =
+
+    0.1576    0.6557    0.7060    0.4387    0.2760    0.7513    0.8407    0.3517    0.0759    0.1622
+    0.9706    0.0357    0.0318    0.3816    0.6797    0.2551    0.2543    0.8308    0.0540    0.7943
+    0.9572    0.8491    0.2769    0.7655    0.6551    0.5060    0.8143    0.5853    0.5308    0.3112
+    0.4854    0.9340    0.0462    0.7952    0.1626    0.6991    0.2435    0.5497    0.7792    0.5285
+    0.8003    0.6787    0.0971    0.1869    0.1190    0.8909    0.9293    0.9172    0.9340    0.1656
+    0.1419    0.7577    0.8235    0.4898    0.4984    0.9593    0.3500    0.2858    0.1299    0.6020
+    0.4218    0.7431    0.6948    0.4456    0.9597    0.5472    0.1966    0.7572    0.5688    0.2630
+    0.9157    0.3922    0.3171    0.6463    0.3404    0.1386    0.2511    0.7537    0.4694    0.6541
+    0.7922    0.6555    0.9502    0.7094    0.5853    0.1493    0.6160    0.3804    0.0119    0.6892
+    0.9595    0.1712    0.0344    0.7547    0.2238    0.2575    0.4733    0.5678    0.3371    0.7482
+
+v = rand(round(10*rand),1)
+
+v =
+
+    0.0838
+    0.2290
+    0.9133
+    0.1524
+    0.8258
+
+%Vector with random length and random values
+v = rand(round(10*rand),1)
+
+v =
+
+    0.9961
+    0.0782
+    0.4427
+    0.1067
+    0.9619
+
+v = rand(round(10*rand),1)
+
+v =
+
+   Empty matrix: 0-by-1
+
+v = rand(round(10*rand),1)
+
+v =
+
+    0.8173
+    0.8687
+    0.0844
+    0.3998
+    0.2599
+    0.8001
+    0.4314
+    0.9106
+
+v = rand(round(10*rand),1)
+
+v =
+
+    0.2638
+    0.1455
+
+disp(sprintf('-> here''s the contents of the vector v...%f',v))
+-> here's the contents of the vector v...0.263803-> here's the contents of the vector v...0.145539
+diary off

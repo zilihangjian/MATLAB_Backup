@@ -1,0 +1,1611 @@
+d = [1:3;4:6;7:9;10:12]
+
+d =
+
+     1     2     3
+     4     5     6
+     7     8     9
+    10    11    12
+
+a = 10
+
+a =
+
+    10
+
+%scalar
+b = [1:-4:10]
+
+b =
+
+   Empty matrix: 1-by-0
+
+b = [1:-4:10]
+
+b =
+
+   Empty matrix: 1-by-0
+
+c = []
+
+c =
+
+     []
+
+%b and c are null 
+%d is 4x3 matrix
+length(d')
+
+ans =
+
+     4
+
+length(d0)
+{Undefined function or variable 'd0'.
+} 
+length(d)
+
+ans =
+
+     4
+
+%length always gives the largest dimension
+size(a)
+
+ans =
+
+     1     1
+
+size(b)
+
+ans =
+
+     1     0
+
+size(c)
+
+ans =
+
+     0     0
+
+size(d)
+
+ans =
+
+     4     3
+
+size(d')
+
+ans =
+
+     3     4
+
+%c is called an empty variable
+isempty(c)
+
+ans =
+
+     1
+
+%different from c=0
+ihelp paren
+{Undefined function 'ihelp' for input arguments of type 'char'.
+} 
+help paren
+ Parentheses, braces, and brackets.
+ ( )  Parentheses are used to indicate precedence in arithmetic
+      expressions and to enclose arguments of functions in the usual
+      way. They are used to enclose subscripts of vectors and matrices
+      in a manner somewhat more general than the usual way. If X and V 
+      are vectors, then X(V) is the concatenation of X(V(1)), X(V(2)), 
+      ..., X(V(N)), where the size of X(V) is 1xN for a row vector X, 
+      or Nx1 for a column vector X. The components of V must be integers
+      and are used as subscripts. An error occurs if any such subscript
+      is less than 1 or greater than the dimension of X.
+   
+      Parenthesis can also enclose logical (or 0-1) subscripts.
+      If V is logical, the non-zero elements of V define a mask into the
+      array X.  Logical arrays are produced by the relational and logical
+      operators or by the LOGICAL command.  Parentheses are supported by all
+      the MATLAB data types including the traditional double precision
+      arrays as well as the structure, cell, and character arrays.
+   
+      Some examples:
+         X(3) is the third element of X.
+         X([1 2 3]) is the first three elements of X.
+         If X has N components, X(N:-1:1) reverses them.
+         X(X>0.5) returns those elements of X that are > 0.5.
+   
+      The same indirect subscripting is used in matrices and arrays.
+      If V has M components and W has N components, then A(V,W) is the
+      M-by-N matrix formed from the elements of A whose subscripts are
+      the elements of V and W. For example, A([1,5],:) = A([5,1],:)
+      interchanges rows 1 and 5 of A.
+   
+ .()  Dot-parentheses are used to reference a structure using a variable
+      for the fieldname. The fieldname is called 'dynamic' because the
+      name is established at runtime. The syntax for referencing a 
+      structure S with dynamic fieldname f is
+ 
+           S.(f)
+ 
+      The following example results in aVal getting the value stored in 
+      S.fieldtwo, that is, 2:
+ 
+           S.field_one = 1; 
+           S.field_two = 2; 
+           fieldname = 'field_two'; 
+           aVal = S.(fieldname); 
+ 
+      The next example shows a function that accepts two inputs: 
+      the first (account_id) a dynamic fieldname, and the second 
+      (year) an index into that field:
+  
+         function record = get_acct_summary(account_id, year)
+         record = clientinfo.(account_id)(year);
+ 
+      You can call this function using
+ 
+         acctinfo = get_acct_summary('jmahoney114', 2005);
+ 
+ { }  Braces are used to form cell arrays.  They are similar to
+      brackets [ ] except that nesting levels are preserved.
+      {magic(3) 6.9 'hello'} is a cell array with three elements.
+      {magic(3),6.9,'hello'} is the same thing.  
+      {'This' 'is' 'a';'two' 'row' 'cell'} is a 2-by-3 cell array.
+      The semicolon ends the first row. {1 {2 3} 4} is a 3 element
+      cell array where element 2 is itself a cell array.
+   
+      Braces are also used for content addressing of cell arrays.
+      They act similar to parentheses in this case except that the
+      contents of the cell are returned. 
+     
+      Some examples:
+         X{3} is the contents of the third element of X.
+         X{3}(4,5) is the (4,5) element of those contents.
+         X{[1 2 3]} is a comma-separated list of the first three
+         elements of X.  It is the same as X{1},X{2},X{3} and makes sense
+         inside [] ,{}, or in function input or output lists (see LISTS).
+   
+      You can repeat the content addressing for nested cells so
+      that X{1}{2} is the contents of the second element of the cell
+      inside the first cell of X.  This also works for nested
+      structures, as in X(2).field(3).name or combinations of cell arrays
+      and structures, as in  Z{2}.type(3).
+ 
+ [ ]  Brackets are used in forming vectors and matrices.
+      [6.9 9.64 SQRT(-1)] is a vector with three elements
+      separated by blanks. [6.9, 9.64, sqrt(-1)] is the same
+      thing. [1+I 2-I 3] and [1 +I 2 -I 3] are not the same.
+      The first has three elements and the second has five.
+      [11 12 13; 21 22 23] is a 2-by-3 matrix. The semicolon
+      ends the first row.
+   
+      Vectors and matrices can be concatenated with [ ] brackets.
+      [A B; C] is allowed if the number of rows of A equals
+      the number of rows of B and the number of columns of A
+      plus the number of columns of B equals the number of
+      columns of C. This rule generalizes in a hopefully
+      obvious way to allow fairly complicated constructions.
+      N-D arrays within brackets are concatenated along the
+      first two dimensions. The remaining dimensions must match.
+ 
+      A = [] stores an empty matrix in A. See CLEAR to remove
+      variables from the current workspace.
+ 
+      For the use of [ and ] on the left of the = in multiple
+      assignment statements, see LU, EIG, SVD and so on.
+ 
+      See also <a href="matlab:help logical">logical</a>, <a href="matlab:help lists">lists</a>, <a href="matlab:help punct">punct</a>, <a href="matlab:help clear">clear</a>.
+
+19*2/2*9
+
+ans =
+
+   171
+
+19*2/(2*9)
+
+ans =
+
+    2.1111
+
+%Difference in precedence 
+clear; tic; t = linspace(0,pi,100); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+ clear; tic; t = linspace(0,pi,100); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+                                                                              |
+{Error: Unexpected MATLAB expression.
+} 
+clear; tic; t = linspace(0,pi,100); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+ clear; tic; t = linspace(0,pi,100); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+                                                                              |
+{Error: Unexpected MATLAB expression.
+} 
+clear; tic; t = linspace(0,pi,100); for n=1:length(t); y(n) = cos(t(n)); end; toc; %non-vectorized code
+Elapsed time is 0.069851 seconds.
+clear; tic; t=linspace(0,pi,100); y=cos(t);toc;%vectorized code
+Elapsed time is 0.000825 seconds.
+clear; tic; t=linspace(0,pi,100000); y=cos(t);toc;%vectorized code
+Elapsed time is 0.032848 seconds.
+clear; tic; t = linspace(0,pi,100000); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+ clear; tic; t = linspace(0,pi,100000); for n=1:length(t); y(n) = cos(t(n)); end toc; %non-vectorized code
+                                                                                 |
+{Error: Unexpected MATLAB expression.
+} 
+clear; tic; t = linspace(0,pi,100000); for n=1:length(t); y(n) = cos(t(n)); end; toc; %non-vectorized code
+Elapsed time is 0.105579 seconds.
+random_elements
+{Attempted to access x(100,0); index must be a positive integer or logical.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('random_elements', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m', 7)" style="font-weight:bold">random_elements</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m',7,0)">line 7</a>)
+    if x(100,i) < .5
+} 
+random_elements
+{Attempted to access x(100,2); index out of bounds because size(x)=[100,1].
+
+Error in <a href="matlab:helpUtils.errorDocCallback('random_elements', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m', 7)" style="font-weight:bold">random_elements</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m',7,0)">line 7</a>)
+    if x(100,i) < .5
+} 
+random_elements
+Index: 2 and Value: 0Index: 5 and Value: 0Index: 11 and Value: 0Index: 12 and Value: 0Index: 13 and Value: 0Index: 14 and Value: 0Index: 16 and Value: 0Index: 17 and Value: 0Index: 18 and Value: 0Index: 19 and Value: 0Index: 20 and Value: 0Index: 21 and Value: 0Index: 23 and Value: 0Index: 24 and Value: 0Index: 27 and Value: 0Index: 28 and Value: 0Index: 29 and Value: 0Index: 30 and Value: 0Index: 32 and Value: 0Index: 35 and Value: 0Index: 36 and Value: 0Index: 37 and Value: 0Index: 38 and Value: 0Index: 39 and Value: 0Index: 41 and Value: 0Index: 42 and Value: 0Index: 44 and Value: 0Index: 47 and Value: 0Index: 49 and Value: 0Index: 50 and Value: 0Index: 54 and Value: 0Index: 55 and Value: 0Index: 58 and Value: 0Index: 59 and Value: 0Index: 61 and Value: 0Index: 65 and Value: 0Index: 66 and Value: 0Index: 67 and Value: 0Index: 69 and Value: 0Index: 71 and Value: 0Index: 73 and Value: 0Index: 78 and Value: 0Index: 80 and Value: 0Index: 81 and Value: 0Index: 84 and Value: 0Index: 91 and Value: 0Index: 92 and Value: 0Index: 94 and Value: 0Index: 95 and Value: 0Index: 96 and Value: 0Index: 100 and Value: 0random_elements
+Index: 1 and Value: 0
+Index: 3 and Value: 0
+Index: 4 and Value: 0
+Index: 6 and Value: 0
+Index: 10 and Value: 0
+Index: 16 and Value: 0
+Index: 17 and Value: 0
+Index: 19 and Value: 0
+Index: 20 and Value: 0
+Index: 21 and Value: 0
+Index: 22 and Value: 0
+Index: 25 and Value: 0
+Index: 26 and Value: 0
+Index: 28 and Value: 0
+Index: 31 and Value: 0
+Index: 32 and Value: 0
+Index: 33 and Value: 0
+Index: 35 and Value: 0
+Index: 36 and Value: 0
+Index: 37 and Value: 0
+Index: 38 and Value: 0
+Index: 39 and Value: 0
+Index: 40 and Value: 0
+Index: 43 and Value: 0
+Index: 45 and Value: 0
+Index: 46 and Value: 0
+Index: 49 and Value: 0
+Index: 51 and Value: 0
+Index: 57 and Value: 0
+Index: 58 and Value: 0
+Index: 60 and Value: 0
+Index: 61 and Value: 0
+Index: 65 and Value: 0
+Index: 66 and Value: 0
+Index: 67 and Value: 0
+Index: 69 and Value: 0
+Index: 72 and Value: 0
+Index: 73 and Value: 0
+Index: 74 and Value: 0
+Index: 75 and Value: 0
+Index: 76 and Value: 0
+Index: 78 and Value: 0
+Index: 79 and Value: 0
+Index: 81 and Value: 0
+Index: 82 and Value: 0
+Index: 84 and Value: 0
+Index: 88 and Value: 0
+Index: 90 and Value: 0
+Index: 94 and Value: 0
+Index: 96 and Value: 0
+Index: 97 and Value: 0
+Index: 98 and Value: 0
+Index: 99 and Value: 0
+Index: 100 and Value: 0
+random_elements
+Index: 1 and Value: 0
+dIndex: 2 and Value: 0
+dIndex: 4 and Value: 0
+dIndex: 8 and Value: 0
+dIndex: 9 and Value: 0
+dIndex: 10 and Value: 0
+dIndex: 13 and Value: 0
+dIndex: 18 and Value: 0
+dIndex: 19 and Value: 0
+dIndex: 22 and Value: 0
+dIndex: 23 and Value: 0
+dIndex: 24 and Value: 0
+dIndex: 25 and Value: 0
+dIndex: 26 and Value: 0
+dIndex: 27 and Value: 0
+dIndex: 29 and Value: 0
+dIndex: 35 and Value: 0
+dIndex: 37 and Value: 0
+dIndex: 40 and Value: 0
+dIndex: 41 and Value: 0
+dIndex: 42 and Value: 0
+dIndex: 45 and Value: 0
+dIndex: 48 and Value: 0
+dIndex: 50 and Value: 0
+dIndex: 52 and Value: 0
+dIndex: 53 and Value: 0
+dIndex: 54 and Value: 0
+dIndex: 55 and Value: 0
+dIndex: 57 and Value: 0
+dIndex: 59 and Value: 0
+dIndex: 60 and Value: 0
+dIndex: 61 and Value: 0
+dIndex: 63 and Value: 0
+dIndex: 64 and Value: 0
+dIndex: 65 and Value: 0
+dIndex: 67 and Value: 0
+dIndex: 69 and Value: 0
+dIndex: 71 and Value: 0
+dIndex: 73 and Value: 0
+dIndex: 74 and Value: 0
+dIndex: 75 and Value: 0
+dIndex: 79 and Value: 0
+dIndex: 85 and Value: 0
+dIndex: 87 and Value: 0
+dIndex: 88 and Value: 0
+dIndex: 90 and Value: 0
+dIndex: 91 and Value: 0
+dIndex: 94 and Value: 0
+dIndex: 96 and Value: 0
+dIndex: 99 and Value: 0
+drandom_elements
+Index: 4 and Value: 0.26478
+dIndex: 5 and Value: 0.31807
+dIndex: 6 and Value: 0.11921
+dIndex: 9 and Value: 0.47946
+dIndex: 17 and Value: 0.21868
+dIndex: 18 and Value: 0.10580
+dIndex: 19 and Value: 0.10970
+dIndex: 20 and Value: 0.06359
+dIndex: 21 and Value: 0.40458
+dIndex: 22 and Value: 0.44837
+dIndex: 23 and Value: 0.36582
+dIndex: 29 and Value: 0.19203
+dIndex: 30 and Value: 0.13887
+dIndex: 32 and Value: 0.09382
+dIndex: 36 and Value: 0.48485
+dIndex: 37 and Value: 0.39346
+dIndex: 41 and Value: 0.34771
+dIndex: 42 and Value: 0.15000
+dIndex: 44 and Value: 0.26215
+dIndex: 45 and Value: 0.04445
+dIndex: 47 and Value: 0.24279
+dIndex: 48 and Value: 0.44240
+dIndex: 50 and Value: 0.35923
+dIndex: 52 and Value: 0.39471
+dIndex: 55 and Value: 0.44231
+dIndex: 56 and Value: 0.01958
+dIndex: 57 and Value: 0.33086
+dIndex: 58 and Value: 0.42431
+dIndex: 59 and Value: 0.27027
+dIndex: 60 and Value: 0.19705
+dIndex: 62 and Value: 0.42992
+dIndex: 64 and Value: 0.39118
+dIndex: 66 and Value: 0.39679
+dIndex: 69 and Value: 0.37740
+dIndex: 70 and Value: 0.21602
+dIndex: 73 and Value: 0.32757
+dIndex: 75 and Value: 0.43864
+dIndex: 78 and Value: 0.16725
+dIndex: 84 and Value: 0.15475
+dIndex: 85 and Value: 0.19986
+dIndex: 86 and Value: 0.40695
+dIndex: 90 and Value: 0.31852
+dIndex: 92 and Value: 0.08995
+dIndex: 93 and Value: 0.11171
+dIndex: 94 and Value: 0.13629
+dIndex: 96 and Value: 0.49518
+dIndex: 97 and Value: 0.18971
+dIndex: 98 and Value: 0.49501
+dIndex: 99 and Value: 0.14761
+dIndex: 100 and Value: 0.05497
+drandom_elements
+Index: 9 and Value: 0.00052
+dIndex: 14 and Value: 0.47952
+dIndex: 16 and Value: 0.22784
+dIndex: 17 and Value: 0.49809
+dIndex: 23 and Value: 0.24673
+dIndex: 25 and Value: 0.08348
+dIndex: 35 and Value: 0.01698
+dIndex: 36 and Value: 0.12086
+dIndex: 38 and Value: 0.48430
+dIndex: 40 and Value: 0.20941
+dIndex: 43 and Value: 0.03199
+dIndex: 45 and Value: 0.36241
+dIndex: 46 and Value: 0.04953
+dIndex: 47 and Value: 0.48957
+dIndex: 48 and Value: 0.19251
+dIndex: 49 and Value: 0.12308
+dIndex: 50 and Value: 0.20549
+dIndex: 51 and Value: 0.14651
+dIndex: 52 and Value: 0.18907
+dIndex: 53 and Value: 0.04265
+dIndex: 55 and Value: 0.28187
+dIndex: 58 and Value: 0.49912
+dIndex: 60 and Value: 0.44518
+dIndex: 61 and Value: 0.12393
+dIndex: 62 and Value: 0.49036
+dIndex: 65 and Value: 0.27029
+dIndex: 66 and Value: 0.20846
+dIndex: 69 and Value: 0.41703
+dIndex: 70 and Value: 0.20598
+dIndex: 72 and Value: 0.08207
+dIndex: 73 and Value: 0.10571
+dIndex: 74 and Value: 0.14204
+dIndex: 75 and Value: 0.16646
+dIndex: 78 and Value: 0.05208
+dIndex: 82 and Value: 0.06340
+dIndex: 89 and Value: 0.17760
+dIndex: 90 and Value: 0.39859
+dIndex: 91 and Value: 0.13393
+dIndex: 92 and Value: 0.03089
+dIndex: 94 and Value: 0.30131
+dIndex: 95 and Value: 0.29553
+dIndex: 96 and Value: 0.33294
+dIndex: 97 and Value: 0.46707
+dIndex: 99 and Value: 0.02523
+dclc
+random_elements
+Index: 3 and Value: 0.34788
+dIndex: 4 and Value: 0.44603
+dIndex: 5 and Value: 0.05424
+dIndex: 6 and Value: 0.17711
+dIndex: 8 and Value: 0.33083
+dIndex: 10 and Value: 0.11816
+dIndex: 15 and Value: 0.28785
+dIndex: 16 and Value: 0.41452
+dIndex: 17 and Value: 0.46484
+dIndex: 20 and Value: 0.10022
+dIndex: 21 and Value: 0.17812
+dIndex: 22 and Value: 0.35963
+dIndex: 23 and Value: 0.05670
+dIndex: 25 and Value: 0.33585
+dIndex: 26 and Value: 0.17567
+dIndex: 27 and Value: 0.20895
+dIndex: 30 and Value: 0.46847
+dIndex: 32 and Value: 0.10401
+dIndex: 36 and Value: 0.18419
+dIndex: 38 and Value: 0.29994
+dIndex: 39 and Value: 0.13412
+dIndex: 40 and Value: 0.21260
+dIndex: 42 and Value: 0.07145
+dIndex: 43 and Value: 0.24249
+dIndex: 44 and Value: 0.05375
+dIndex: 45 and Value: 0.44172
+dIndex: 46 and Value: 0.01328
+dIndex: 48 and Value: 0.19666
+dIndex: 49 and Value: 0.09337
+dIndex: 50 and Value: 0.30737
+dIndex: 51 and Value: 0.45606
+dIndex: 52 and Value: 0.10167
+dIndex: 54 and Value: 0.33209
+dIndex: 55 and Value: 0.29735
+dIndex: 56 and Value: 0.06205
+dIndex: 57 and Value: 0.29824
+dIndex: 58 and Value: 0.04635
+dIndex: 62 and Value: 0.08989
+dIndex: 63 and Value: 0.08086
+dIndex: 67 and Value: 0.10915
+dIndex: 69 and Value: 0.33810
+dIndex: 70 and Value: 0.29397
+dIndex: 72 and Value: 0.01034
+dIndex: 73 and Value: 0.04845
+dIndex: 80 and Value: 0.28798
+dIndex: 83 and Value: 0.39652
+dIndex: 84 and Value: 0.06159
+dIndex: 86 and Value: 0.33758
+dIndex: 89 and Value: 0.10481
+dIndex: 90 and Value: 0.12789
+dIndex: 92 and Value: 0.48523
+dIndex: 96 and Value: 0.05133
+dIndex: 97 and Value: 0.07289
+dIndex: 98 and Value: 0.08853
+drandom_elements
+Index: 2 and Value: 0.13208
+dIndex: 4 and Value: 0.11035
+dIndex: 5 and Value: 0.11749
+dIndex: 7 and Value: 0.32881
+dIndex: 12 and Value: 0.23483
+dIndex: 16 and Value: 0.08623
+dIndex: 17 and Value: 0.36644
+dIndex: 18 and Value: 0.36920
+dIndex: 22 and Value: 0.36765
+dIndex: 23 and Value: 0.20603
+dIndex: 24 and Value: 0.08667
+dIndex: 26 and Value: 0.20567
+dIndex: 27 and Value: 0.38827
+dIndex: 29 and Value: 0.22895
+dIndex: 31 and Value: 0.48448
+dIndex: 32 and Value: 0.15185
+dIndex: 34 and Value: 0.10061
+dIndex: 35 and Value: 0.29407
+dIndex: 36 and Value: 0.23737
+dIndex: 38 and Value: 0.09150
+dIndex: 39 and Value: 0.40532
+dIndex: 40 and Value: 0.10485
+dIndex: 41 and Value: 0.11228
+dIndex: 43 and Value: 0.29157
+dIndex: 46 and Value: 0.43248
+dIndex: 49 and Value: 0.43264
+dIndex: 51 and Value: 0.10976
+dIndex: 53 and Value: 0.18746
+dIndex: 54 and Value: 0.26618
+dIndex: 56 and Value: 0.48760
+dIndex: 58 and Value: 0.39601
+dIndex: 59 and Value: 0.27294
+dIndex: 60 and Value: 0.03723
+dIndex: 62 and Value: 0.42956
+dIndex: 63 and Value: 0.45174
+dIndex: 65 and Value: 0.05940
+dIndex: 66 and Value: 0.31581
+dIndex: 69 and Value: 0.12533
+dIndex: 70 and Value: 0.13015
+dIndex: 71 and Value: 0.09235
+dIndex: 72 and Value: 0.00782
+dIndex: 73 and Value: 0.42311
+dIndex: 77 and Value: 0.10882
+dIndex: 79 and Value: 0.12650
+dIndex: 80 and Value: 0.13430
+dIndex: 81 and Value: 0.09859
+dIndex: 82 and Value: 0.14203
+dIndex: 83 and Value: 0.16825
+dIndex: 84 and Value: 0.19625
+dIndex: 85 and Value: 0.31748
+dIndex: 86 and Value: 0.31643
+dIndex: 87 and Value: 0.21756
+dIndex: 88 and Value: 0.25104
+dIndex: 92 and Value: 0.18443
+dIndex: 93 and Value: 0.21203
+dIndex: 94 and Value: 0.07735
+dIndex: 98 and Value: 0.31343
+dIndex: 99 and Value: 0.16620
+drandom_elements
+Index: 2 and Value: 0.17043
+dIndex: 3 and Value: 0.25779
+dIndex: 4 and Value: 0.39680
+dIndex: 5 and Value: 0.07399
+dIndex: 7 and Value: 0.40239
+dIndex: 9 and Value: 0.40218
+dIndex: 11 and Value: 0.15437
+dIndex: 12 and Value: 0.38135
+dIndex: 13 and Value: 0.16113
+dIndex: 16 and Value: 0.35078
+dIndex: 18 and Value: 0.29415
+dIndex: 22 and Value: 0.33531
+dIndex: 23 and Value: 0.29923
+dIndex: 24 and Value: 0.45259
+dIndex: 25 and Value: 0.42265
+dIndex: 26 and Value: 0.35961
+dIndex: 29 and Value: 0.42433
+dIndex: 30 and Value: 0.42936
+dIndex: 31 and Value: 0.12487
+dIndex: 32 and Value: 0.02443
+dIndex: 33 and Value: 0.29019
+dIndex: 34 and Value: 0.31752
+dIndex: 38 and Value: 0.45789
+dIndex: 39 and Value: 0.24048
+dIndex: 44 and Value: 0.10592
+dIndex: 46 and Value: 0.46326
+dIndex: 47 and Value: 0.21216
+dIndex: 48 and Value: 0.09852
+dIndex: 50 and Value: 0.17501
+dIndex: 51 and Value: 0.16357
+dIndex: 56 and Value: 0.15359
+dIndex: 60 and Value: 0.03656
+dIndex: 63 and Value: 0.12019
+dIndex: 65 and Value: 0.32583
+dIndex: 67 and Value: 0.39888
+dIndex: 68 and Value: 0.41509
+dIndex: 69 and Value: 0.18074
+dIndex: 70 and Value: 0.25539
+dIndex: 71 and Value: 0.02054
+dIndex: 75 and Value: 0.16351
+dIndex: 79 and Value: 0.44004
+dIndex: 80 and Value: 0.25761
+dIndex: 82 and Value: 0.22867
+dIndex: 83 and Value: 0.06419
+dIndex: 88 and Value: 0.41905
+dIndex: 89 and Value: 0.39076
+dIndex: 91 and Value: 0.31743
+dIndex: 98 and Value: 0.44396
+dIndex: 99 and Value: 0.06002
+drandom_elements
+Index: 2 and Value: 0.35507
+dIndex: 4 and Value: 0.22417
+dIndex: 7 and Value: 0.38725
+dIndex: 8 and Value: 0.14219
+dIndex: 9 and Value: 0.02513
+dIndex: 10 and Value: 0.42111
+dIndex: 11 and Value: 0.18410
+dIndex: 13 and Value: 0.37036
+dIndex: 17 and Value: 0.17686
+dIndex: 19 and Value: 0.26532
+dIndex: 21 and Value: 0.22377
+dIndex: 22 and Value: 0.37356
+dIndex: 23 and Value: 0.08750
+dIndex: 25 and Value: 0.18062
+dIndex: 26 and Value: 0.04505
+dIndex: 28 and Value: 0.34744
+dIndex: 30 and Value: 0.38387
+dIndex: 32 and Value: 0.02165
+dIndex: 37 and Value: 0.38331
+dIndex: 41 and Value: 0.27507
+dIndex: 42 and Value: 0.24863
+dIndex: 43 and Value: 0.45164
+dIndex: 44 and Value: 0.22771
+dIndex: 47 and Value: 0.02999
+dIndex: 49 and Value: 0.08708
+dIndex: 52 and Value: 0.06695
+dIndex: 54 and Value: 0.01818
+dIndex: 61 and Value: 0.13787
+dIndex: 62 and Value: 0.21780
+dIndex: 63 and Value: 0.18214
+dIndex: 64 and Value: 0.04182
+dIndex: 65 and Value: 0.10694
+dIndex: 68 and Value: 0.35446
+dIndex: 69 and Value: 0.41063
+dIndex: 75 and Value: 0.33670
+dIndex: 77 and Value: 0.24417
+dIndex: 78 and Value: 0.29551
+dIndex: 81 and Value: 0.41159
+dIndex: 88 and Value: 0.08259
+dIndex: 91 and Value: 0.35453
+dIndex: 93 and Value: 0.34645
+dIndex: 95 and Value: 0.45469
+dIndex: 96 and Value: 0.41343
+dIndex: 97 and Value: 0.21773
+dIndex: 98 and Value: 0.12565
+dIndex: 99 and Value: 0.30891
+drandom_elements
+Index: 3 and Value: 0.00980
+dIndex: 7 and Value: 0.04266
+dIndex: 8 and Value: 0.37819
+dIndex: 11 and Value: 0.22428
+dIndex: 12 and Value: 0.26905
+dIndex: 14 and Value: 0.47749
+dIndex: 16 and Value: 0.23644
+dIndex: 17 and Value: 0.17712
+dIndex: 21 and Value: 0.10789
+dIndex: 22 and Value: 0.18223
+dIndex: 23 and Value: 0.09910
+dIndex: 24 and Value: 0.48976
+dIndex: 25 and Value: 0.19325
+dIndex: 27 and Value: 0.09909
+dIndex: 28 and Value: 0.04417
+dIndex: 31 and Value: 0.31194
+dIndex: 32 and Value: 0.17898
+dIndex: 33 and Value: 0.33896
+dIndex: 34 and Value: 0.21015
+dIndex: 38 and Value: 0.10153
+dIndex: 39 and Value: 0.39085
+dIndex: 40 and Value: 0.05462
+dIndex: 42 and Value: 0.43172
+dIndex: 45 and Value: 0.48565
+dIndex: 47 and Value: 0.13755
+dIndex: 48 and Value: 0.39000
+dIndex: 53 and Value: 0.34329
+dIndex: 55 and Value: 0.12477
+dIndex: 59 and Value: 0.39828
+dIndex: 62 and Value: 0.32246
+dIndex: 66 and Value: 0.33042
+dIndex: 68 and Value: 0.36064
+dIndex: 70 and Value: 0.41390
+dIndex: 71 and Value: 0.49235
+dIndex: 74 and Value: 0.32775
+dIndex: 78 and Value: 0.03192
+dIndex: 79 and Value: 0.35687
+dIndex: 81 and Value: 0.28150
+dIndex: 82 and Value: 0.23038
+dIndex: 87 and Value: 0.04755
+dIndex: 88 and Value: 0.34878
+dIndex: 89 and Value: 0.45134
+dIndex: 90 and Value: 0.24090
+dIndex: 93 and Value: 0.28151
+dIndex: 95 and Value: 0.13776
+dIndex: 97 and Value: 0.13860
+dIndex: 99 and Value: 0.36616
+drandom_elements
+Index: 2 and Value: 0.48959
+dIndex: 4 and Value: 0.35314
+dIndex: 5 and Value: 0.44944
+dIndex: 7 and Value: 0.04230
+dIndex: 9 and Value: 0.18921
+dIndex: 13 and Value: 0.36102
+dIndex: 16 and Value: 0.01926
+dIndex: 17 and Value: 0.08387
+dIndex: 20 and Value: 0.23124
+dIndex: 21 and Value: 0.40349
+dIndex: 22 and Value: 0.12202
+dIndex: 23 and Value: 0.26844
+dIndex: 24 and Value: 0.25785
+dIndex: 25 and Value: 0.33167
+dIndex: 26 and Value: 0.15223
+dIndex: 27 and Value: 0.34801
+dIndex: 28 and Value: 0.12166
+dIndex: 30 and Value: 0.09428
+dIndex: 32 and Value: 0.39902
+dIndex: 33 and Value: 0.04740
+dIndex: 34 and Value: 0.34237
+dIndex: 40 and Value: 0.05479
+dIndex: 41 and Value: 0.30366
+dIndex: 42 and Value: 0.04619
+dIndex: 43 and Value: 0.19548
+dIndex: 48 and Value: 0.07068
+dIndex: 51 and Value: 0.28595
+dIndex: 56 and Value: 0.43326
+dIndex: 57 and Value: 0.47062
+dIndex: 59 and Value: 0.26909
+dIndex: 63 and Value: 0.30775
+dIndex: 64 and Value: 0.13872
+dIndex: 65 and Value: 0.47557
+dIndex: 66 and Value: 0.36246
+dIndex: 70 and Value: 0.13350
+dIndex: 71 and Value: 0.02156
+dIndex: 73 and Value: 0.30082
+dIndex: 76 and Value: 0.28662
+dIndex: 85 and Value: 0.02586
+dIndex: 86 and Value: 0.44653
+dIndex: 89 and Value: 0.37231
+dIndex: 93 and Value: 0.37253
+dIndex: 98 and Value: 0.20678
+dIndex: 100 and Value: 0.07205
+drandom_elements
+Index: 1 and Value: 0.40673
+dIndex: 5 and Value: 0.48455
+dIndex: 7 and Value: 0.41705
+dIndex: 11 and Value: 0.38888
+dIndex: 12 and Value: 0.45474
+dIndex: 13 and Value: 0.24669
+dIndex: 19 and Value: 0.14888
+dIndex: 21 and Value: 0.45039
+dIndex: 22 and Value: 0.20567
+dIndex: 26 and Value: 0.28495
+dIndex: 29 and Value: 0.12281
+dIndex: 30 and Value: 0.40732
+dIndex: 31 and Value: 0.27529
+dIndex: 33 and Value: 0.28338
+dIndex: 36 and Value: 0.39003
+dIndex: 37 and Value: 0.49790
+dIndex: 42 and Value: 0.32604
+dIndex: 43 and Value: 0.45642
+dIndex: 47 and Value: 0.01861
+dIndex: 49 and Value: 0.43851
+dIndex: 50 and Value: 0.43782
+dIndex: 51 and Value: 0.11704
+dIndex: 53 and Value: 0.32486
+dIndex: 54 and Value: 0.24623
+dIndex: 55 and Value: 0.34271
+dIndex: 56 and Value: 0.37569
+dIndex: 59 and Value: 0.39582
+dIndex: 60 and Value: 0.39813
+dIndex: 65 and Value: 0.40008
+dIndex: 67 and Value: 0.13434
+dIndex: 68 and Value: 0.06047
+dIndex: 69 and Value: 0.08425
+dIndex: 70 and Value: 0.16390
+dIndex: 71 and Value: 0.32422
+dIndex: 72 and Value: 0.30173
+dIndex: 73 and Value: 0.01168
+dIndex: 75 and Value: 0.09537
+dIndex: 76 and Value: 0.14651
+dIndex: 84 and Value: 0.33068
+dIndex: 85 and Value: 0.43000
+dIndex: 86 and Value: 0.49181
+dIndex: 87 and Value: 0.07104
+dIndex: 89 and Value: 0.06463
+dIndex: 90 and Value: 0.43618
+dIndex: 92 and Value: 0.39453
+dIndex: 97 and Value: 0.19078
+dIndex: 98 and Value: 0.25858
+drandom_elements
+Index: 5 and Value: 0.20208
+dIndex: 6 and Value: 0.45389
+dIndex: 7 and Value: 0.42791
+dIndex: 12 and Value: 0.34690
+dIndex: 15 and Value: 0.15650
+dIndex: 18 and Value: 0.42646
+dIndex: 21 and Value: 0.36003
+dIndex: 22 and Value: 0.45421
+dIndex: 23 and Value: 0.38639
+dIndex: 26 and Value: 0.43028
+dIndex: 31 and Value: 0.10933
+dIndex: 32 and Value: 0.38993
+dIndex: 34 and Value: 0.45938
+dIndex: 35 and Value: 0.05034
+dIndex: 36 and Value: 0.22869
+dIndex: 38 and Value: 0.01564
+dIndex: 40 and Value: 0.07807
+dIndex: 43 and Value: 0.21799
+dIndex: 45 and Value: 0.12219
+dIndex: 48 and Value: 0.05598
+dIndex: 49 and Value: 0.05634
+dIndex: 50 and Value: 0.15250
+dIndex: 51 and Value: 0.01962
+dIndex: 52 and Value: 0.43518
+dIndex: 57 and Value: 0.09770
+dIndex: 59 and Value: 0.10802
+dIndex: 61 and Value: 0.14316
+dIndex: 63 and Value: 0.00458
+dIndex: 69 and Value: 0.27142
+dIndex: 70 and Value: 0.10075
+dIndex: 74 and Value: 0.08296
+dIndex: 77 and Value: 0.17105
+dIndex: 80 and Value: 0.44063
+dIndex: 83 and Value: 0.45195
+dIndex: 88 and Value: 0.36719
+dIndex: 89 and Value: 0.23929
+dIndex: 92 and Value: 0.40678
+dIndex: 93 and Value: 0.11262
+dIndex: 94 and Value: 0.44385
+dIndex: 95 and Value: 0.30018
+dIndex: 96 and Value: 0.40139
+dIndex: 98 and Value: 0.40363
+dIndex: 99 and Value: 0.39018
+dIndex: 100 and Value: 0.36045
+drandom_elements
+Index: 1 and Value: 0.14026
+dIndex: 2 and Value: 0.26013
+dIndex: 3 and Value: 0.08682
+dIndex: 4 and Value: 0.42940
+dIndex: 5 and Value: 0.25728
+dIndex: 6 and Value: 0.29756
+dIndex: 7 and Value: 0.42486
+dIndex: 8 and Value: 0.11921
+dIndex: 9 and Value: 0.49507
+dIndex: 11 and Value: 0.24357
+dIndex: 13 and Value: 0.07409
+dIndex: 14 and Value: 0.39388
+dIndex: 15 and Value: 0.00339
+dIndex: 16 and Value: 0.22068
+dIndex: 17 and Value: 0.00130
+dIndex: 18 and Value: 0.18918
+dIndex: 19 and Value: 0.14248
+dIndex: 20 and Value: 0.26808
+dIndex: 21 and Value: 0.17489
+dIndex: 22 and Value: 0.13865
+dIndex: 26 and Value: 0.22118
+dIndex: 27 and Value: 0.48267
+dIndex: 28 and Value: 0.37601
+dIndex: 30 and Value: 0.26487
+dIndex: 31 and Value: 0.06836
+dIndex: 32 and Value: 0.43633
+dIndex: 33 and Value: 0.17385
+dIndex: 34 and Value: 0.02611
+dIndex: 36 and Value: 0.43060
+dIndex: 39 and Value: 0.00735
+dIndex: 44 and Value: 0.21811
+dIndex: 46 and Value: 0.22803
+dIndex: 47 and Value: 0.37086
+dIndex: 50 and Value: 0.40243
+dIndex: 51 and Value: 0.31802
+dIndex: 56 and Value: 0.33257
+dIndex: 58 and Value: 0.44240
+dIndex: 60 and Value: 0.03318
+dIndex: 63 and Value: 0.17930
+dIndex: 64 and Value: 0.33653
+dIndex: 65 and Value: 0.18771
+dIndex: 66 and Value: 0.32193
+dIndex: 67 and Value: 0.40386
+dIndex: 69 and Value: 0.04874
+dIndex: 71 and Value: 0.27481
+dIndex: 72 and Value: 0.24150
+dIndex: 73 and Value: 0.24315
+dIndex: 74 and Value: 0.15416
+dIndex: 79 and Value: 0.17581
+dIndex: 80 and Value: 0.36037
+dIndex: 81 and Value: 0.18879
+dIndex: 82 and Value: 0.00120
+dIndex: 83 and Value: 0.31642
+dIndex: 87 and Value: 0.43904
+dIndex: 88 and Value: 0.28743
+dIndex: 95 and Value: 0.12322
+dIndex: 97 and Value: 0.34726
+dIndex: 98 and Value: 0.09215
+dIndex: 99 and Value: 0.14785
+dIndex: 100 and Value: 0.19817
+drandom_elements
+Index: 2 and Value: 0.43151
+Index: 4 and Value: 0.25678
+Index: 5 and Value: 0.00976
+Index: 7 and Value: 0.27939
+Index: 10 and Value: 0.39268
+Index: 11 and Value: 0.02486
+Index: 15 and Value: 0.05693
+Index: 16 and Value: 0.45032
+Index: 22 and Value: 0.37385
+Index: 24 and Value: 0.11612
+Index: 25 and Value: 0.05765
+Index: 27 and Value: 0.28482
+Index: 30 and Value: 0.18578
+Index: 31 and Value: 0.19304
+Index: 32 and Value: 0.34164
+Index: 34 and Value: 0.39067
+Index: 35 and Value: 0.27322
+Index: 36 and Value: 0.15195
+Index: 37 and Value: 0.39711
+Index: 38 and Value: 0.37472
+Index: 39 and Value: 0.13111
+Index: 40 and Value: 0.43504
+Index: 41 and Value: 0.09151
+Index: 43 and Value: 0.01098
+Index: 46 and Value: 0.23537
+Index: 47 and Value: 0.44802
+Index: 49 and Value: 0.06140
+Index: 50 and Value: 0.49629
+Index: 52 and Value: 0.22127
+Index: 57 and Value: 0.27888
+Index: 59 and Value: 0.23693
+Index: 63 and Value: 0.17260
+Index: 64 and Value: 0.09035
+Index: 65 and Value: 0.25526
+Index: 70 and Value: 0.22989
+Index: 73 and Value: 0.40384
+Index: 75 and Value: 0.09000
+Index: 76 and Value: 0.32094
+Index: 78 and Value: 0.06061
+Index: 85 and Value: 0.31783
+Index: 86 and Value: 0.45221
+Index: 88 and Value: 0.10986
+Index: 89 and Value: 0.10974
+Index: 90 and Value: 0.26988
+Index: 94 and Value: 0.31186
+Index: 95 and Value: 0.29146
+Index: 99 and Value: 0.25537
+Index: 100 and Value: 0.08867
+random_elements
+{Operands to the || and && operators must be convertible to logical scalar values.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('random_elements', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m', 8)" style="font-weight:bold">random_elements</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m',8,0)">line 8</a>)
+    if x(i,1) < .5 && x <.4
+} 
+random_elements
+Elapsed time is 0.001578 seconds.
+Elapsed time is 0.001009 seconds.
+random_elements
+Elapsed time is 0.001572 seconds.
+Elapsed time is 0.001159 seconds.
+random_elements
+Elapsed time is 0.001539 seconds.
+Elapsed time is 0.001236 seconds.
+random_elements
+Elapsed time is 0.001552 seconds.
+Elapsed time is 0.001167 seconds.
+random_elements
+Elapsed time is 0.001586 seconds.
+Elapsed time is 0.001191 seconds.
+random_elements
+Elapsed time is 0.001601 seconds.
+Elapsed time is 0.001203 seconds.
+random_elements
+Elapsed time is 0.001578 seconds.
+Elapsed time is 0.001160 seconds.
+random_elements
+Elapsed time is 0.001621 seconds.
+Elapsed time is 0.001145 seconds.
+random_elements
+Elapsed time is 0.001551 seconds.
+Elapsed time is 0.001195 seconds.
+random_elements
+Elapsed time is 0.001621 seconds.
+Elapsed time is 0.001070 seconds.
+random_elements
+Elapsed time is 0.001632 seconds.
+Elapsed time is 0.001061 seconds.
+random_elements
+Elapsed time is 0.001567 seconds.
+Elapsed time is 0.001096 seconds.
+random_elements
+Elapsed time is 0.001547 seconds.
+Elapsed time is 0.001168 seconds.
+random_elements
+Elapsed time is 0.001598 seconds.
+Elapsed time is 0.001244 seconds.
+random_elements
+Elapsed time is 0.001544 seconds.
+Elapsed time is 0.001141 seconds.
+random_elements
+Elapsed time is 0.001552 seconds.
+Elapsed time is 0.001205 seconds.
+random_elements
+Elapsed time is 0.001566 seconds.
+Elapsed time is 0.001256 seconds.
+random_elements
+Elapsed time is 0.001545 seconds.
+Elapsed time is 0.001162 seconds.
+random_elements
+Elapsed time is 0.001550 seconds.
+Elapsed time is 0.001480 seconds.
+random_elements
+Elapsed time is 0.001541 seconds.
+Elapsed time is 0.001151 seconds.
+random_elements
+Elapsed time is 0.001504 seconds.
+Elapsed time is 0.001013 seconds.
+random_elements
+Elapsed time is 0.001548 seconds.
+Elapsed time is 0.001153 seconds.
+random_elements
+Elapsed time is 0.001580 seconds.
+Elapsed time is 0.001158 seconds.
+random_elements
+Elapsed time is 0.001544 seconds.
+Elapsed time is 0.001177 seconds.
+random_elements
+Elapsed time is 0.001549 seconds.
+Elapsed time is 0.001183 seconds.
+random_elements
+Elapsed time is 0.001572 seconds.
+Elapsed time is 0.001162 seconds.
+random_elements
+Elapsed time is 0.001548 seconds.
+Elapsed time is 0.000992 seconds.
+random_elements
+Elapsed time is 0.001799 seconds.
+Elapsed time is 0.001180 seconds.
+random_elements
+Elapsed time is 0.001600 seconds.
+Elapsed time is 0.001013 seconds.
+random_elements
+Elapsed time is 0.001789 seconds.
+Elapsed time is 0.001209 seconds.
+random_elements
+Elapsed time is 0.001709 seconds.
+Elapsed time is 0.001202 seconds.
+random_elements
+Elapsed time is 0.001748 seconds.
+Elapsed time is 0.001231 seconds.
+random_elements
+Elapsed time is 0.001737 seconds.
+Elapsed time is 0.001144 seconds.
+random_elements
+Elapsed time is 0.001748 seconds.
+Elapsed time is 0.001162 seconds.
+random_elements
+Elapsed time is 0.001446 seconds.
+Elapsed time is 0.001060 seconds.
+random_elements
+Elapsed time is 0.001781 seconds.
+Elapsed time is 0.001174 seconds.
+random_elements
+Elapsed time is 0.001749 seconds.
+Elapsed time is 0.001090 seconds.
+random_elements
+Elapsed time is 0.001763 seconds.
+Elapsed time is 0.001169 seconds.
+random_elements
+Elapsed time is 0.001752 seconds.
+Elapsed time is 0.001191 seconds.
+random_elements
+Elapsed time is 0.001747 seconds.
+Elapsed time is 0.001212 seconds.
+random_elements
+Elapsed time is 0.001756 seconds.
+Elapsed time is 0.001195 seconds.
+random_elements
+Elapsed time is 0.001761 seconds.
+Elapsed time is 0.001162 seconds.
+random_elements
+Elapsed time is 0.001751 seconds.
+Elapsed time is 0.001147 seconds.
+random_elements
+Elapsed time is 0.001763 seconds.
+Elapsed time is 0.001165 seconds.
+random_elements
+Elapsed time is 0.001390 seconds.
+Elapsed time is 0.001144 seconds.
+random_elements
+Elapsed time is 0.001763 seconds.
+Elapsed time is 0.001188 seconds.
+random_elements
+Elapsed time is 0.001821 seconds.
+Elapsed time is 0.001154 seconds.
+random_elements
+Elapsed time is 0.001827 seconds.
+Elapsed time is 0.001100 seconds.
+random_elements
+Elapsed time is 0.001772 seconds.
+Elapsed time is 0.001200 seconds.
+random_elements
+Elapsed time is 0.001752 seconds.
+Elapsed time is 0.000959 seconds.
+random_elements
+Elapsed time is 0.001743 seconds.
+Elapsed time is 0.001114 seconds.
+random_elements
+Elapsed time is 0.001761 seconds.
+Elapsed time is 0.001164 seconds.
+random_elements
+Elapsed time is 0.001595 seconds.
+Elapsed time is 0.001027 seconds.
+random_elements
+Elapsed time is 0.001746 seconds.
+Elapsed time is 0.001211 seconds.
+random_elements
+Elapsed time is 0.001766 seconds.
+Elapsed time is 0.001184 seconds.
+random_elements
+Elapsed time is 0.001452 seconds.
+Elapsed time is 0.001157 seconds.
+random_elements
+Elapsed time is 0.001760 seconds.
+Elapsed time is 0.001141 seconds.
+random_elements
+Elapsed time is 0.001766 seconds.
+Elapsed time is 0.001164 seconds.
+random_elements
+Elapsed time is 0.001790 seconds.
+Elapsed time is 0.001226 seconds.
+random_elements
+Elapsed time is 0.001756 seconds.
+Elapsed time is 0.001156 seconds.
+random_elements
+Elapsed time is 0.001738 seconds.
+Elapsed time is 0.001176 seconds.
+random_elements
+Elapsed time is 0.001752 seconds.
+Elapsed time is 0.001171 seconds.
+random_elements
+Elapsed time is 0.001628 seconds.
+Elapsed time is 0.000963 seconds.
+random_elements
+Elapsed time is 0.001744 seconds.
+Elapsed time is 0.001161 seconds.
+random_elements
+Elapsed time is 0.012105 seconds.
+Elapsed time is 0.009762 seconds.
+random_elements
+Elapsed time is 0.013595 seconds.
+Elapsed time is 0.009272 seconds.
+random_elements
+Elapsed time is 0.013710 seconds.
+Elapsed time is 0.009258 seconds.
+random_elements
+Elapsed time is 0.013848 seconds.
+Elapsed time is 0.010476 seconds.
+random_elements
+Elapsed time is 0.012976 seconds.
+Elapsed time is 0.009437 seconds.
+random_elements
+Elapsed time is 0.014043 seconds.
+Elapsed time is 0.010170 seconds.
+random_elements
+Elapsed time is 0.014634 seconds.
+Elapsed time is 0.010319 seconds.
+random_elements
+Elapsed time is 0.014563 seconds.
+Elapsed time is 0.010083 seconds.
+random_elements
+Elapsed time is 0.012166 seconds.
+Elapsed time is 0.010279 seconds.
+random_elements
+Elapsed time is 0.013435 seconds.
+Elapsed time is 0.011224 seconds.
+random_elements
+Elapsed time is 0.013886 seconds.
+Elapsed time is 0.010863 seconds.
+random_elements
+Elapsed time is 0.014383 seconds.
+Elapsed time is 0.010235 seconds.
+random_elements
+Elapsed time is 0.014210 seconds.
+Elapsed time is 0.011041 seconds.
+random_elements
+Elapsed time is 0.014524 seconds.
+Elapsed time is 0.009954 seconds.
+random_elements
+Elapsed time is 0.013999 seconds.
+Elapsed time is 0.009193 seconds.
+random_elements
+Elapsed time is 0.014626 seconds.
+Elapsed time is 0.011114 seconds.
+random_elements
+Elapsed time is 0.012572 seconds.
+Elapsed time is 0.010946 seconds.
+random_elements
+Elapsed time is 0.012411 seconds.
+Elapsed time is 0.010103 seconds.
+random_elements
+Elapsed time is 0.012886 seconds.
+Elapsed time is 0.009159 seconds.
+random_elements
+Elapsed time is 0.012245 seconds.
+Elapsed time is 0.010908 seconds.
+random_elements
+Elapsed time is 0.011929 seconds.
+Elapsed time is 0.010428 seconds.
+random_elements
+Elapsed time is 0.014744 seconds.
+Elapsed time is 0.011384 seconds.
+random_elements
+Elapsed time is 0.012369 seconds.
+Elapsed time is 0.010035 seconds.
+random_elements
+Elapsed time is 0.014195 seconds.
+Elapsed time is 0.011449 seconds.
+random_elements
+Elapsed time is 0.013132 seconds.
+Elapsed time is 0.010196 seconds.
+random_elements
+Elapsed time is 0.011684 seconds.
+Elapsed time is 0.010958 seconds.
+random_elements
+Elapsed time is 0.014079 seconds.
+Elapsed time is 0.011184 seconds.
+random_elements
+Elapsed time is 0.123701 seconds.
+Elapsed time is 0.093421 seconds.
+random_elements
+Elapsed time is 0.131236 seconds.
+Elapsed time is 0.094354 seconds.
+random_elements
+Elapsed time is 0.126275 seconds.
+Elapsed time is 0.094380 seconds.
+random_elements
+Elapsed time is 0.125377 seconds.
+Elapsed time is 0.093273 seconds.
+random_elements
+Elapsed time is 0.126243 seconds.
+Elapsed time is 0.093585 seconds.
+random_elements
+Elapsed time is 1.222594 seconds.
+Elapsed time is 0.944826 seconds.
+random_elements
+Elapsed time is 1.243597 seconds.
+Elapsed time is 0.948414 seconds.
+random_elements
+Elapsed time is 1.247162 seconds.
+Elapsed time is 0.947308 seconds.
+random_elements
+Elapsed time is 12.721011 seconds.
+Elapsed time is 9.733562 seconds.
+random_elements
+{Error using <a href="matlab:helpUtils.errorDocCallback('rand')" style="font-weight:bold">rand</a>
+Out of memory. Type HELP MEMORY for your options.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('random_elements', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m', 5)" style="font-weight:bold">random_elements</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Week2\random_elements.m',5,0)">line 5</a>)
+x = rand(1000000000,1); %random 100 element vector
+} 
+HELP MEMORY
+{Cannot find an exact (case-sensitive) match for 'HELP'
+
+The closest match is: help in C:\Program Files\MATLAB\R2014a\toolbox\matlab\helptools\help.m
+
+} 
+help MEMORY
+ <strong>memory</strong> Memory information.
+    See 'doc memory' for more information on how to make the
+    best use of memory when running MATLAB.
+ 
+    <strong>memory</strong> when called without an output argument displays
+    information about how much memory is available and how
+    much is currently being used by MATLAB. All values are double
+    precision and in units of bytes.
+ 
+    USERVIEW = <strong>memory</strong> returns information about how much memory is
+    available and how much is currently being used by MATLAB. USERVIEW
+    is a structure that contains the following fields:
+       MaxPossibleArrayBytes -- The largest contiguous free memory block.
+          It is an upper bound on the largest single array that MATLAB can
+          currently create. This field is the smaller of these two values:
+             a) The largest contiguous memory block found in the
+                MATLAB virtual address space, or
+             b) The total available system memory.
+          To find the number of elements, divide MaxPossibleArrayBytes
+          by the size of each element in bytes. For example, divide by
+          eight for a double matrix. The actual number of elements that
+          that can be created is always less than this number.
+       MemAvailableAllArrays -- The total amount of memory available
+          for data. This field is the smaller of these two values:
+             a) The total available MATLAB virtual address space, or
+             b) The total available system memory.
+          The amount of memory available is guaranteed to be at least
+          as large as this field.
+       MemUsedMATLAB -- The total amount of system meclc
+help hW01_problem01
+  function [] = <strong>HW01_problem01</strong>(str, num)
+  inputs - str and num. str is a string that is printed to the console, num
+  is the scalar number of times it's printed to console
+  outputs - nothing, only output is to the console
+
+clc
+hW01_problem01('Hello',5)
+{Cannot find an exact (case-sensitive) match for 'hW01_problem01'
+
+The closest match is: HW01_problem01 in C:\Users\Johnathan\Documents\MATLAB\PHY 287\Homework\Homework1\HW01_problem01.m
+
+} 
+HW01_problem01('Hello',5)
+Hello
+Hello
+Hello
+Hello
+Hello
+clc
+clear
+help sprintf
+ <strong>sprintf</strong> Write formatted data to string.
+    STR = <strong>sprintf</strong>(FORMAT, A, ...) applies the FORMAT to all elements of
+    array A and any additional array arguments in column order, and returns
+    the results to string STR.
+ 
+    [STR, ERRMSG] = <strong>sprintf</strong>(FORMAT, A, ...) returns an error message when
+    the operation is unsuccessful.  Otherwise, ERRMSG is empty.
+ 
+    <strong>sprintf</strong> is the same as FPRINTF except that it returns the data in a 
+    MATLAB string rather than writing to a file.
+ 
+    FORMAT is a string that describes the format of the output fields, and
+    can include combinations of the following:
+ 
+       * Conversion specifications, which include a % character, a
+         conversion character (such as d, i, o, u, x, f, e, g, c, or s),
+         and optional flags, width, and precision fields.  For more
+         details, type "doc sprintf" at the command prompt.
+ 
+       * Literal text to print.
+ 
+       * Escape characters, including:
+             \b     Backspace            ''   Single quotation mark
+             \f     Form feed            %%   Percent character
+             \n     New line             \\   Backslash
+             \r     Carriage return      \xN  Hexadecimal number N
+             \t     Horizontal tab       \N   Octal number N%
+         where \n is a line termination character on all platforms.
+ 
+    Notes:
+ 
+    If you apply an integer or string conversion to a numeric value that
+    contains a fraction, MATLAB overrides the specified conversion, and
+    uses %e.
+ 
+    Numeric conversions print only the real component of complex numbers.
+ 
+    Examples
+       sprintf('%0.5g',(1+sqrt(5))/2)       % 1.618
+       sprintf('%0.5g',1/eps)               % 4.5036e+15       
+       sprintf('%15.5f',1/eps)              % 4503599627370496.00000
+       sprintf('%d',round(pi))              % 3
+       sprintf('%s','hello')                % hello
+       sprintf('The array is %dx%d.',2,3)   % The array is 2x3.
+ 
+    See also <a href="matlab:help fprintf">fprintf</a>, <a href="matlab:help sscanf">sscanf</a>, <a href="matlab:help num2str">num2str</a>, <a href="matlab:help int2str">int2str</a>, <a href="matlab:help char">char</a>.
+
+    Overloaded methods:
+       <a href="matlab:help gpuArray/sprintf">gpuArray/sprintf</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc sprintf">doc sprintf</a>
+
+clc
+HW01_problem05
+{Error using <a href="matlab:helpUtils.errorDocCallback('HW01_problem05', 'C:\Users\Johnathan\Documents\MATLAB\PHY 287\Homework\Homework1\HW01_problem05.m', 5)" style="font-weight:bold">HW01_problem05</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Homework\Homework1\HW01_problem05.m',5,0)">line 5</a>)
+Not enough input arguments.
+} 
+HW01_problem05(5)
+
+ans =
+
+   120
+
+HW01_problem05(6)
+
+ans =
+
+   720
+
+HW01_problem05(7)
+
+ans =
+
+        5040
+
+factorial(7)
+
+ans =
+
+        5040
+
+HW01_problem03(5)
+{Undefined function 'HW01_problem03' for input arguments of type 'double'.
+} 
+HW01_problem03(5)
+{Undefined function 'HW01_problem03' for input arguments of type 'double'.
+} 
+HW01_problem03(5)
+
+ans =
+
+     5
+
+HW01_problem03(6)
+
+ans =
+
+     8
+
+HW01_problem03(10)
+
+ans =
+
+    55
+
+clc
+HW01_problem04(5)
+   1.7764e-14
+
+Closed Form: 5.000000
+Actual Value: 5.000000
+Percent Error: 0.000000000
+Difference Error: 0.000000000
+
+ans =
+
+    5.0000
+
+HW01_problem04(1000)
+   3.4218e-12
+
+Closed Form: 43466557686938915000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.000000
+Actual Value: 43466557686937428000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.000000
+Percent Error: 0.000000000
+Difference Error: 1487355641344835600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.000000000
+
+ans =
+
+  4.3467e+208
+
+HW01_problem04(100)
+   3.1452e-13
+
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+Difference Error: 1114112.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+   3.1452e-13
+
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+Difference Error: 1114112.000000000
+
+ans =
+
+   3.5422e+20
+
+clc
+HW01_problem04(100)
+   3.1452e-13
+
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+Difference Error: 1114112.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Homework\Homework1\HW01_problem04.m',5,1)">5   </a>phi = (1+sqrt(5))/2;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+HW01_problem04
+if system_dependent('IsDebugMode')==1, dbquit; end
+HW01_problem04(100)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 287\Homework\Homework1\HW01_problem04.m',5,1)">5   </a>phi = (1+sqrt(5))/2;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+Closed Form: 354224848179263110000.000000
+if system_dependent('IsDebugMode')==1, dbstep; end
+Actual Value: 354224848179262000000.000000
+if system_dependent('IsDebugMode')==1, dbstep; end
+Percent Error: 0.000000000
+if system_dependent('IsDebugMode')==1, dbstep; end
+Difference Error: 1114112.000000000
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+
+ans =
+
+   3.5422e+20
+
+clc
+HW01_problem04(100)
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+Difference Error: 1114112.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+Difference Error: 1114112.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)\
+ HW01_problem04(100)\
+                     |
+{Error: Expression or statement is incomplete or incorrect.
+} 
+HW01_problem04(100)
+
+percent_error =
+
+   3.1452e-15
+
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+Percent Error: 0.000000000
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100)
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+
+percent_error =
+
+   3.1452e-13
+
+
+ans =
+
+   3.5422e+20
+
+HW01_problem04(100);
+Closed Form: 354224848179263110000.000000
+Actual Value: 354224848179262000000.000000
+
+percent_error =
+
+   3.1452e-13
+

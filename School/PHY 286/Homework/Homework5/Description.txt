@@ -1,0 +1,7 @@
+1. Problem 5.9 from text (50 points) 
+The output of this function must be a the numerical solution as well as the coulomb potential for a given charge.
+
+2. Solve for the electric potential for given linear charge density (\lambda?) of length 2L.
+ Assume this line lies along the x-axis, symmetrically about the origin.  (50 points)
+
+The output must plot the potential as a function along the +ve y-axis and the +z-axis.

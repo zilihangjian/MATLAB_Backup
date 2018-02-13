@@ -1,0 +1,615 @@
+q = linspace(10*pi/180,80*pi/180,30);
+for n1=1:length(q); r(n1) = twoD_projectile(q(n1), 120,.0001,50,.01,9.8);
+end
+plot(1,r);
+plot(q*180/pi,r); ylable('Range(\theta [m]'); xlabel('\theta [deg]');
+%V0 = 120;
+%B = .001
+%m = 50kg
+%dt = .01
+%g = 9.8q = linspace(10*pi/180, 80*pi.180,30);
+ q = linspace(10*pi/180, 80*pi.180,30);
+                              |
+{Error: Unexpected MATLAB expression.
+} 
+q = linspace(10*pi/180, 80*pi/180,30);
+for n1=1:length(q); r(n1) = twoDprojectile(q(n1)), 120, 
+clc
+clc
+help return
+ <strong>return</strong> Return to invoking function.
+    <strong>return</strong> causes a return to the invoking function or to the keyboard.
+    It also terminates the KEYBOARD mode.
+ 
+    Normally functions return when the end of the function is reached.
+    A <strong>return</strong> statement can be used to force an early return.
+ 
+    Example
+       function d = det(A)
+       if isempty(A)
+          d = 1;
+          return
+       else
+         ...
+       end
+ 
+    See also <a href="matlab:help function">function</a>, <a href="matlab:help keyboard">keyboard</a>, <a href="matlab:help break">break</a>, <a href="matlab:help continue">continue</a>.
+
+    Reference page in Help browser
+       <a href="matlab:doc return">doc return</a>
+
+clc
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+{In an assignment  A(I) = B, the number of elements in B and I must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 7)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,0)">line 7</a>)
+theta(2) = theta-dtheta;
+} 
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+{In an assignment  A(I) = B, the number of elements in B and I must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 7)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,0)">line 7</a>)
+theta(3) = theta;
+} 
+clc
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+{In an assignment  A(I) = B, the number of elements in B and I must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 11)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,0)">line 11</a>)
+theta(3) = theta;
+} 
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+{In an assignment  A(I) = B, the number of elements in B and I must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 11)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,0)">line 11</a>)
+theta(3) = theta;
+} 
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',5,1)">5   </a>count = 3;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>theta(1) = 0;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>theta(2) = 0;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>theta(3) = 0;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>theta(3) = theta;
+dbstep
+{In an assignment  A(I) = B, the number of elements in B and I must be the same.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 10)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,0)">line 10</a>)
+theta(3) = theta;
+} 
+maxRange(1000,30,.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',5,1)">5   </a>count = 3;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+if system_dependent('IsDebugMode')==1, dbquit; end
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',5,1)">5   </a>count = 3;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while N < count
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',26,1)">26  </a>end
+dbstep
+End of function maxRange.
+dbstep
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',5,1)">5   </a>count = 3;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while N < count
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',26,1)">26  </a>end
+dbstep
+End of function maxRange.
+dbstep
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',5,1)">5   </a>count = 3;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, deltat, g);
+dbstep
+{Undefined function or variable 'deltat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 10)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,0)">line 10</a>)
+    f1 = twoD_projectile(t(count), v0, B, m, deltat, g);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta,dtheta,m,B,dt,g,v0);
+} 
+fprime((pi/6),.01,50,.001,.01,9.8,120)
+{Undefined function or variable 'fprime'.
+} 
+eval_fprime((pi/6),.01,50,.001,.01,9.8,120)
+
+ans =
+
+  -1.2242e+05
+
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta,dtheta,m,B,dt,g,v0);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,1)">11  </a>    f2 = twoD_projectile(t(count-1), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',12,1)">12  </a>    gt = f1-f2/dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,1)">13  </a>    gtprime = eval_gprime(theta,dtheta,m,B,dt,g,v0);
+dbstep
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta,dtheta,m,B,dt,g,v0);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,1)">11  </a>    f2 = twoD_projectile(t(count-1), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',12,1)">12  </a>    gt = f1-f2/dtheta;
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta, dtheta, m, B, dt, g, v0);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+clc
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+[Warning: Invalid port icon.  Icon must be of type uint 8.] 
+[> In slCustomizer/callAll (line 118)
+  In slCustomizer/refresh (line 69)
+  In slCustomizer.staticRefresh (line 23)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sl_refresh_customizations', 'C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\sl_refresh_customizations.m', 18)" style="font-weight:bold">sl_refresh_customizations</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\sl_refresh_customizations.m',18,0)">line 18</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('slcustomize', 'C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\slcustomize.m', 4)" style="font-weight:bold">slcustomize</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\slcustomize.m',4,0)">line 4</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('simulinkrc', 'C:\Program Files\MATLAB\R2015a\toolbox\local\simulinkrc.m', 48)" style="font-weight:bold">simulinkrc</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\local\simulinkrc.m',48,0)">line 48</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 6)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,0)">line 6</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 8)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,0)">line 8</a>)] 
+[Warning: simulink (blockdiagram.xml, line 20340): Program interruption (Ctrl-C) has been detected.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_system', 'C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\load_system.m', 21)" style="font-weight:bold">load_system</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\load_system.m',21,0)">line 21</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('libbrowse2', 'C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\libbrowse2.m', 21)" style="font-weight:bold">libbrowse2</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\simulink\simulink\libbrowse2.m',21,0)">line 21</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 6)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,0)">line 6</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 8)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,0)">line 8</a>)] 
+{Program interruption (Ctrl-C) has been detected.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+clc
+clc
+clc
+clear
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, dt, g);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',15,1)">15  </a>vx(1) = v0.*cos(theta);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',16,1)">16  </a>vy(1) = v0.*sin(theta);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',17,1)">17  </a>t(1) = 0;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',18,1)">18  </a>x(1) = 0;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',19,1)">19  </a>y(1) = 0;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',20,1)">20  </a>count = 2;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',26,1)">26  </a>    y(count) = y(count-1)+vy(count-1).*deltat;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',28,1)">28  </a>    vx(count)= vx(count-1)-adx.*deltat;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',29,1)">29  </a>    vy(count)= vy(count-1)-ady.*deltat;
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',30,1)">30  </a>    count = count +1;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',31,1)">31  </a>end
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',21,1)">21  </a>while(y(count-1) >=0)
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',22,1)">22  </a>    v = sqrt(vx(count-1).^2 + vy(count-1).^2);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',23,1)">23  </a>    adx = B.*v.*vx(count-1)./m;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',24,1)">24  </a>    ady = B.*v.*vy(count-1)./m + g;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\twoD_projectile.m',25,1)">25  </a>    x(count) = x(count-1)+vx(count-1).*deltat;
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta, dtheta, m, B, dt, g, v0);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,1)">11  </a>    f2 = twoD_projectile(t(count-1), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',12,1)">12  </a>    gt = f1-f2/dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,1)">13  </a>    gtprime = eval_gprime(theta, dtheta, m, B, dt, g, v0);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',4,1)">4   </a>Theta1 = theta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',5,1)">5   </a>Theta2 = theta - dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,1)">6   </a>g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',4,1)">4   </a>Theta1 = theta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',5,1)">5   </a>Theta2 = theta - dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,1)">6   </a>f1 = twoD_projectile(Theta1, v0, B, m, dt, g);
+dbstep in
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_fprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m', 6)" style="font-weight:bold">eval_fprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,0)">line 6</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eval_gprime', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m', 6)" style="font-weight:bold">eval_gprime</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,0)">line 6</a>)
+g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('maxRange', 'C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m', 13)" style="font-weight:bold">maxRange</a> (<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,0)">line 13</a>)
+    gtprime = eval_gprime(theta, dtheta, m, B, dt, g, v0);
+} 
+maxRange(1000,(pi/6),.01,50,.001,.01,9.8,120)
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',6,1)">6   </a>t(3) = theta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',7,1)">7   </a>t(2) = theta-dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',8,1)">8   </a>t(1) = theta - 2*dtheta;
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',9,1)">9   </a>while count < N
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',10,1)">10  </a>    f1 = twoD_projectile(t(count), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',11,1)">11  </a>    f2 = twoD_projectile(t(count-1), v0, B, m, dt, g);
+dbstep
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',12,1)">12  </a>    gt = f1-f2/dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\maxRange.m',13,1)">13  </a>    gtprime = eval_gprime(theta, dtheta, m, B, dt, g, v0);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',4,1)">4   </a>Theta1 = theta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',5,1)">5   </a>Theta2 = theta - dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_gprime.m',6,1)">6   </a>g1 = eval_fprime(Theta1, v0, B, m, dt, g);
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',4,1)">4   </a>Theta1 = theta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',5,1)">5   </a>Theta2 = theta - dtheta;
+dbstep in
+<a href="matlab: opentoline('C:\Users\Johnathan\Documents\MATLAB\PHY 286\Week5\eval_fprime.m',6,1)">6   </a>f1 = twoD_projectile(Theta1, v0, B, m, dt, g);
+if system_dependent('IsDebugMode')==1, dbquit; end

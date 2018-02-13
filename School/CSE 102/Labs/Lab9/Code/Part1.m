@@ -1,0 +1,16 @@
+clear; clc; close all;
+f = imread('wirebond_mask.tif');
+w = [ 2 -1 -1; -1 2 -1; -1 -1 2];
+g = imfilter(double(f),w);
+figure(1);imshow(g,[]);
+gtop = g(1:120, 1:120);
+gtop = pixeldup(gtop,4);
+figure(2), imshow(gtop,[]);
+gbot = g(end-119:end, end-119: end);
+gbot = pixeldup(gbot,4);
+figure(3); imshow(gbot,[]);
+g = abs(g);
+figure(4); imshow(g,[]);
+T = max(g(:));
+g = g >= T;
+figure(5); imshow(g);

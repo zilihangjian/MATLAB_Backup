@@ -1,0 +1,271 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>excelRead</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-08"><meta name="DC.source" content="excelRead.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">clc; clear; close <span class="string">all</span>;
+format <span class="string">long</span>
+currentDirectory = pwd;<span class="comment">%Store current directory</span>
+[fileName,pathName] = uigetfile();<span class="comment">%Prompt file pathname and filename</span>
+cd(pathName);<span class="comment">%Change to that directory</span>
+fileData = importdata(fileName);<span class="comment">%Import data using importdata function</span>
+cd(currentDirectory)<span class="comment">%Change back to current directory</span>
+
+<span class="comment">%Parse the Structure</span>
+fields = fieldnames(fileData);<span class="comment">%Store the field names of the structure variable data</span>
+dataField = (fileData.(fields{1}));
+textDataField = (fileData.(fields{2}));
+numArguments = length(textDataField);
+
+<span class="comment">%Process String Data</span>
+time = zeros(1,length(dataField));
+position = zeros(1,length(dataField));
+angle = zeros(1,length(dataField));
+
+<span class="keyword">for</span> j = 1: length(textDataField)
+    tempString = lower(textDataField{j});
+    checkTime = strfind(tempString,<span class="string">'time'</span>);
+    checkPosition = strfind(tempString, <span class="string">'position'</span>);
+    checkAngle = strfind(tempString, <span class="string">'angle'</span>);
+    <span class="keyword">if</span> checkTime &gt;= 1 &amp; isequal(time, zeros(1,length(dataField))) <span class="comment">%#ok&lt;AND2&gt;</span>
+        time = dataField(:,j);
+    <span class="keyword">elseif</span> checkPosition &gt;= 1
+        position = dataField(:,j);
+    <span class="keyword">elseif</span> checkAngle &gt;= 1
+        angle = dataField(:,j);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+figure()
+plot(time, position)
+title(<span class="string">'Cart Position vs. Time'</span>)
+ylabel(<span class="string">'Cart Position (mm)'</span>)
+xlabel(<span class="string">'Time (s)'</span>)
+
+figure()
+plot(time, angle)
+title(<span class="string">'Seesaw Angle vs. Time'</span>)
+ylabel(<span class="string">'Seesaw Angle (deg)'</span>)
+xlabel(<span class="string">'Time (s)'</span>)
+
+<span class="comment">% %--------------------------------------------------------------------------</span>
+<span class="comment">% %Code Provided from Seesaw Analysis</span>
+<span class="comment">% %--------------------------------------------------------------------------</span>
+<span class="comment">% % Calculate Settling Time [s]</span>
+<span class="comment">% delta = 0.05;           % Settling time window [rad]</span>
+<span class="comment">% for i = 1:length(time)</span>
+<span class="comment">%     if abs(deg2rad(angle(i))) &gt; delta</span>
+<span class="comment">%         Ts = time(i);      % Settling Time [s]</span>
+<span class="comment">%         if i == length(time)</span>
+<span class="comment">%             Ts = Inf;</span>
+<span class="comment">%         end</span>
+<span class="comment">%     end</span>
+<span class="comment">% end</span>
+<span class="comment">%</span>
+<span class="comment">% % Calculate Deviation Index [rad]</span>
+<span class="comment">% if Ts &lt; time(end)</span>
+<span class="comment">%     ts = time(2) - time(1);       % Sample time</span>
+<span class="comment">%     I1 = find( time == Ts );   % Index of settling time</span>
+<span class="comment">%     if time(end) &gt;= Ts + 10    % Check if steady-state response is &gt; 10 sec</span>
+<span class="comment">%         I2 = I1 + 10/ts;    % Index of steady-state response after 10 sec</span>
+<span class="comment">%     else</span>
+<span class="comment">%         I2 = length(time);     % Index of steady-state response at end of signal</span>
+<span class="comment">%     end</span>
+<span class="comment">%     Ip = sum(ts*deg2rad(abs(angle(I1:I2))))/(time(I2)-time(I1));  % Deviation Index [rad]</span>
+<span class="comment">% else</span>
+<span class="comment">%     Ip = Inf;</span>
+<span class="comment">% end</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+<span class="comment">% % Calculate Score</span>
+<span class="comment">% score = 0.5*Ts + 0.5*Ip;</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+<span class="comment">% % Plot Graphs</span>
+<span class="comment">% subplot(2,1,1)</span>
+<span class="comment">% plot(time,position,'k')</span>
+<span class="comment">% xlabel('Time, t [s]')</span>
+<span class="comment">% ylabel('Cart Displacement, position [mm]')</span>
+<span class="comment">% title([char(group),':  Ts = ',num2str(Ts),...</span>
+<span class="comment">%     ' [s], Ip = ',num2str(Ip),' [rad], Score = ',num2str(score)])</span>
+<span class="comment">%</span>
+<span class="comment">% subplot(2,1,2)</span>
+<span class="comment">% plot(time,angle,'k')</span>
+<span class="comment">% hold on</span>
+<span class="comment">% plot([Ts,Ts],[-15,15],':r')</span>
+<span class="comment">% plot([0,time(end)],[+delta,+delta],':b')</span>
+<span class="comment">% plot([0,time(end)],[-delta,-delta],':b')</span>
+<span class="comment">% hold off</span>
+<span class="comment">% ylim([round(min(angle-2)/2)*2,round(max(angle+1)/2)*2])</span>
+<span class="comment">% xlabel('Time, time [s]')</span>
+<span class="comment">% ylabel('Angular Displacement, /theta [deg]')</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+</pre><img vspace="5" hspace="5" src="excelRead_01.png" alt=""> <img vspace="5" hspace="5" src="excelRead_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc; clear; close all;
+format long
+currentDirectory = pwd;%Store current directory
+[fileName,pathName] = uigetfile();%Prompt file pathname and filename
+cd(pathName);%Change to that directory
+fileData = importdata(fileName);%Import data using importdata function
+cd(currentDirectory)%Change back to current directory
+
+%Parse the Structure
+fields = fieldnames(fileData);%Store the field names of the structure variable data
+dataField = (fileData.(fields{1}));
+textDataField = (fileData.(fields{2}));
+numArguments = length(textDataField);
+
+%Process String Data
+time = zeros(1,length(dataField));
+position = zeros(1,length(dataField));
+angle = zeros(1,length(dataField));
+
+for j = 1: length(textDataField)
+    tempString = lower(textDataField{j});
+    checkTime = strfind(tempString,'time');
+    checkPosition = strfind(tempString, 'position');
+    checkAngle = strfind(tempString, 'angle');
+    if checkTime >= 1 & isequal(time, zeros(1,length(dataField))) %#ok<AND2>
+        time = dataField(:,j);
+    elseif checkPosition >= 1
+        position = dataField(:,j);
+    elseif checkAngle >= 1
+        angle = dataField(:,j);
+    end
+end 
+
+figure()
+plot(time, position)
+title('Cart Position vs. Time')
+ylabel('Cart Position (mm)')
+xlabel('Time (s)')
+
+figure()
+plot(time, angle)
+title('Seesaw Angle vs. Time')
+ylabel('Seesaw Angle (deg)')
+xlabel('Time (s)')
+
+% %REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+% %Code Provided from Seesaw Analysis
+% %REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+% % Calculate Settling Time [s]
+% delta = 0.05;           % Settling time window [rad]
+% for i = 1:length(time)
+%     if abs(deg2rad(angle(i))) > delta
+%         Ts = time(i);      % Settling Time [s]
+%         if i == length(time)
+%             Ts = Inf;
+%         end
+%     end
+% end
+% 
+% % Calculate Deviation Index [rad]
+% if Ts < time(end)
+%     ts = time(2) - time(1);       % Sample time
+%     I1 = find( time == Ts );   % Index of settling time
+%     if time(end) >= Ts + 10    % Check if steady-state response is > 10 sec
+%         I2 = I1 + 10/ts;    % Index of steady-state response after 10 sec
+%     else
+%         I2 = length(time);     % Index of steady-state response at end of signal
+%     end
+%     Ip = sum(ts*deg2rad(abs(angle(I1:I2))))/(time(I2)-time(I1));  % Deviation Index [rad]
+% else
+%     Ip = Inf;
+% end
+% 
+% 
+% % Calculate Score
+% score = 0.5*Ts + 0.5*Ip;
+% 
+% 
+% % Plot Graphs
+% subplot(2,1,1)
+% plot(time,position,'k')
+% xlabel('Time, t [s]')
+% ylabel('Cart Displacement, position [mm]')
+% title([char(group),':  Ts = ',num2str(Ts),...
+%     ' [s], Ip = ',num2str(Ip),' [rad], Score = ',num2str(score)])
+%     
+% subplot(2,1,2)
+% plot(time,angle,'k')
+% hold on
+% plot([Ts,Ts],[-15,15],':r')
+% plot([0,time(end)],[+delta,+delta],':b')
+% plot([0,time(end)],[-delta,-delta],':b')
+% hold off
+% ylim([round(min(angle-2)/2)*2,round(max(angle+1)/2)*2])
+% xlabel('Time, time [s]')
+% ylabel('Angular Displacement, /theta [deg]')
+% 
+% 
+% 
+
+##### SOURCE END #####
+--></body></html>
